@@ -1,0 +1,226 @@
+*{
+    margin:0px; border:0px; padding:0px;
+
+}
+li {
+    list-style: none;
+}
+body, button, input, select, textarea {
+    color: #555;
+    font-size: 12px;
+}
+a:focus,a:active,textarea,input{outline:none;}
+.Header .HeaderTop .Bulletin{float: left;width:27%;height: 50px;line-height: 50px;}
+
+/*---Header第二版----*/
+.Logo{ float:left; margin-top:3px}
+.Header{ width:100%; background-color:#eee;}
+.HeaderTop{ height:50px; background-color:#FFF}
+.Header .HeaderTop .Bulletin{float: left;width:27%;height: 50px;line-height: 50px;}
+.Logo{ float:left; margin-top:6px}
+.righttoolbar ul{float: right; padding:0px; margin: 0;}
+.righttoolbar ul li{margin: 0;padding:0;}
+.righttoolbar ul li{float: left; font-size: 12px; margin-right:15px; line-height: 50px;}
+.righttoolbar ul li a{color: #9b9b9b;text-decoration: none;}
+.righttoolbar ul li a:hover{color: white;text-decoration: underline;}
+
+.righttoolbar ul li.ricond{background:url(../img/homg_rigicon4.gif) no-repeat left center; padding-left:18px }
+.righttoolbar ul li.riconf{background:url(../img/homg_rigicon6.gif) no-repeat left center; padding-left:18px }
+
+.Header .HeaderTop ul li.ricona span{ color: #F00; font-weight: bold;}
+.Menu{ height:37px; width:100%; background-color:#3484b8;}
+.Menu ul{ margin: 0;padding:0;}
+.Menu ul li{ margin: 0 10px;padding:0;}
+.Menu ul li a {text-decoration: none;}
+.Menu ul li a:hover {text-decoration: underline;}
+.Menu>ul{ float:left; padding-left:15px;}
+.Menu>ul>li{ float:left; background:url("../img/logo/menuDnArrow.gif") no-repeat scroll right center; padding: 0 20px 0 5px;position: relative;z-index:8888;}
+.Menu>ul>li.Workbe{ background-position:57px center}
+.Menu>ul>li:hover{ background-color: #2c6d97;}
+.Menu>ul>li>a{ color:#FFF; font:14px/1.5 arial,Microsoft YaHei; line-height:37px;  float:left;}
+.Menu>ul>li.Home{ margin-top:9px; background-image:none; padding-right:0px; padding-left:0px; margin-right:5px}
+.Menu>ul>li.Home:hover{ background:none;}
+.Header .Menu ul li ul { margin:0px;padding:0px;float:left; width:150px; border:1px #ccc solid; border-top:none; background:#fff; position:absolute; left:0px; top:36px; z-index:9999; display:none;border-bottom: #bbbbbb solid 3px;}
+.Header .Menu ul li ul li { float:left; width:100%; border-bottom: 1px dotted #bbbbbb; margin: 0}
+.Header .Menu ul li ul li a { float:left; width:84%; padding:3px 8%; font-size:12px; color:#666; line-height:22px;}
+.Header .Menu ul li ul li a:hover { background:#e6e6e6;color:#3484b8;}
+.Header .Menu ul li:hover ul { display:block;}
+.nav li>a {
+    font-size: 13px;
+}
+.content {
+    height: 650px;
+
+}
+/*footer {
+
+    width: 100%;
+
+    position: fixed;
+
+    bottom: 2px;
+    z-index: 20;
+
+}*/
+.Footer { float:left; width:100%; border-top: 1px solid #e5e5e5; text-align: center; margin-top: 50px; position: fixed}
+
+
+
+/*new user css*/
+.userheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.user {
+    width: auto;
+    margin-top: 80px;
+
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.user .usermenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+
+.user .userform {
+    border: 1px solid grey;
+    height: 800px;
+    width: auto;
+
+
+}
+.user .usermenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.user .usermenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.menulist ul li {
+    line-height: 35px;
+    padding-left: 10px;
+    font-size: 12px;
+
+}
+.menulist ul li a {
+    text-decoration: none;
+}
+.menulist ul li:hover {
+    background-color: #bbbbbb;
+}
+.userform .userBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.userform .userBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.userform .userBtn .cancel {
+    width: 80px;
+
+}
+.userforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.editrelhead{background:#EDF3FE !important;line-height: 30px;height:30px;/* border-top:1px #ddd solid; margin-bottom:1px;padding:8px;*/padding-left: 10px;}
+.DetailContentTable{border-collapse: collapse;}
+.DetailContentTable tr td{height:30px;/*line-height:30px;*/border-bottom:1px solid #dedede;border-right:1px solid #dedede;/*border-top:1px solid #ddd;*/}
+
+.DetailedTd1Label{ background-color: #fafafa !important; color: #333;}
+
+.DetailedTd2Info{ color: #555; padding-left: 10px; padding-right: 5px;}
+.detailedViewTextBox {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    /*color: #000000;*/
+    border:1px solid #bababa;
+    width:90%;
+    background-color:#ffffff;
+}
+.userforminput .table tr td {
+    border: 1px solid grey;
+}
+.detailedViewTextBoxOn {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    /*color: #000000;*/
+    border:1px solid #bababa;
+    width:90%;
+    background-color:#ffffdd;
+}
+.Button_check { padding:0px; margin:0px; border:0px; margin-left:5px;}
+.Button_saveD,.Button_clearD,.Button_findD { float:left; padding:0px 5px; height:20px; color:#fff; overflow:hidden; /*line-height:20px;*/ border-radius:3px; cursor:pointer; font-size:12px;}
+.Button_saveD,.Button_findD { background:#0070BA;}
+.Button_clearD { background:#aaa;}
+.Button_saveD:hover,.Button_findD:hover { background:#0082D9;}
+.Button_clearD:hover { background:#bbb;}
+
+
+/*customer detail css */
+
+.userform .userDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.userform .userDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.userform .userDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+/*contract_order*/
+
+.path {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    line-height: 10px;
+    height: 40px;
+}
+
+.path p {
+    padding: 15px 2px;
+    font-weight: bold;
+
+}
+.path p i {
+    color: #269abc;
+}

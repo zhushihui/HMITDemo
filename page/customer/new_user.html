@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<body>
+<div class="user">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="usermenu">
+                <div class="title">
+                    新增 客户
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="#">合同订单</a> </li>
+                        <li><a href="#">回款计划</a> </li>
+                        <li><a href="#">收款单</a> </li>
+                        <li><a href="#">服务合同</a> </li>
+                        <li><a href="#">项目</a> </li>
+                        <li><a href="#">销售发票</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="userform">
+                <div class="userBtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-success save">保存</button>
+                            <button class="btn btn-danger cancel" onclick="window.history.back();">取消</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userforminput">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>基本信息</b>
+                                </td>
+                                </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>客户名称
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value="" tabindex=""
+                                               class="detailedViewTextBox" onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'" style="width:70%;float:left;"
+                                               id="account_name_check"/>
+                                        <input type="button" id="check" name="check" class="Button_clearD Button_check" value="查重"
+                                               style="float:left;"/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        客户编号
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                               class=detailedViewTextBox onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-table.css">
+    <style type="text/css">@import "../../css/global.css";</style>
+    <script src="../../js/jquery/jquery-1.12.3.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-table.js"></script>
+    <script src="../../js/export/bootstrap-table-export.js"></script>
+    <script src="../../js/export/tableExport.js"></script>
+</head>
+<body>
+<script>
+    $(function() {
+
+
+
+        $('.userform').load('user_form.html',function() {
+            var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+            row = decodeURI(row,"UTF-8");
+            var obj =JSON.parse(row);
+            $('#customerName').text(obj.name);
+            $('.title').text(obj.name);
+        });
+
+
+    });
+    function contractOrder() {
+
+        $('.userform').load('contract_order.html');
+
+
+    }
+
+    function paymentPlan() {
+
+        $('.userform').load('payment_plan.html');
+    }
+
+    function paymentOrder() {
+        $('.userform').load('payment_order.html');
+    }
+    function serciveContract() {
+        $('.userform').load('service_contract.html');
+    }
+    function project() {
+        $('.userform').load('project.html');
+    }
+    function salesInvoice() {
+        $('.userform').load('sales_invoice.html');
+    }
+</script>
+<div class="user">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="usermenu">
+                <div class="title">
+                    新增 客户
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="contractOrder();">合同订单</a> </li>
+                        <li><a href="javascript:void(0);" onclick="paymentPlan();">回款计划</a> </li>
+                        <li><a href="javascript:void(0);" onclick="paymentOrder();">收款单</a> </li>
+                        <li><a href="javascript:void(0);" onclick="serciveContract()">服务合同</a> </li>
+                        <li><a href="javascript:void(0);" onclick="project()">项目</a> </li>
+                        <li><a href="javascript:void(0);" onclick="salesInvoice();">销售发票</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="userform">
+<!--                <div class="userDetailBtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-success return" onclick="window.history.back();">
+                                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表</button>
+                            <button class="btn btn-danger new">
+                                <i class="glyphicon glyphicon-plus"></i>新建</button>
+                            <button class="btn btn-warning copy">
+                                <i class="glyphicon glyphicon-copyright-mark"></i>复制</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userforminput">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>基本信息</b>
+                                </td>
+                                </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>客户名称
+                                    </td>
+                                    <td id="customerName" width="30%" align="left" class="DetailedTd2Info">
+
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        客户编号
+                                    </td>
+                                    <td id="customerId" width="30%" align="left" class="DetailedTd2Info">
+
+                                    </td>
+
+                                </tr>
+
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
