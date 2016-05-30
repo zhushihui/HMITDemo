@@ -13,14 +13,13 @@
 <script src="../../js/bootstrap-table.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
-<!-- 时间选择器js -->
-<script language="javascript" type="text/javascript" src="../../js/WdatePicker.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
 
 <body>
-<div class="user">
+<div class="project">
     <div class="row">
         <div class="col-md-2">
-            <div class="usermenu">
+            <div class="projectmenu">
                 <div class="title">
                     新增 项目
                 </div>
@@ -29,16 +28,16 @@
                 </div>
                 <div class="menulist">
                     <ul>
-                        <li><a href="#">项目进度</a></li>
-                        <li><a href="#">采购信息</a></li>
+                        <li><a href="project_schedule.html">项目进度</a></li>
+                        <li><a href="purchasing_information.html">采购信息</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="col-md-10">
-            <div class="userform">
-                <div class="userBtn">
+            <div class="projectform">
+                <div class="projectBtn">
                     <div class="row">
                         <div class="col-md-12">
                             <button class="btn btn-success save">保存</button>
@@ -47,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="userforminput">
+                <div class="projectforminput">
                     <div class="row">
 
                         <div class="col-md-12">
@@ -67,11 +66,11 @@
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               style="width:70%;float:left;" id="account_name_check"/>
+                                               style="width:70%;float:left;" id="proName"/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>项目类型
+                                        项目类型
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
@@ -83,7 +82,7 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>项目金额
+                                        项目金额
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
@@ -95,10 +94,10 @@
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>合同编号
+                                        合同编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -107,44 +106,42 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>执行时间
+                                        执行时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-
-                                        <input name="cf_1641" class="Wdate" tabindex="" id="jscal_field_cf_1641" type="text" style="border:1px solid #bababa;"  fieldonly='0'  size="20" maxlength="10" value="" onClick="WdatePicker()">
-
+                                        <input id="date-execution" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>签订日期
+                                        签订日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input name="cf_1641" class="Wdate" tabindex="" id="jscal_field_cf_1641" type="text" style="border:1px solid #bababa;"  fieldonly='0'  size="20" maxlength="10" value="" onClick="WdatePicker()">
+                                        <input id="date-sign" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>预收日期
+                                        预收日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-
-                                        <input name="cf_1641" class="Wdate" tabindex="" id="jscal_field_cf_1641" type="text" style="border:1px solid #bababa;"  fieldonly='0'  size="20" maxlength="10" value="" onClick="WdatePicker()">
+                                        <input id="date-collet" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         <i style="color: red">*</i>项目经理
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-									<input type="text" fieldonly='1' name="accountname" tabindex="" value=""
-                                               tabindex="" class="detailedViewTextBox"
-                                               onfocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"
-                                               style="width:70%;float:left;" id="account_name_check"/>
+                                        <select>
+                                            <option value ="1">请选择</option>
+                                            <option value ="2">李四</option>
+                                            <option value="3">王五</option>
+                                            <option value="4">张三</option>
+                                        </select>
                                     </td>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>备注
+                                        备注
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
@@ -152,7 +149,7 @@
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               style="width:70%;float:left;" id="account_name_check"/>
+                                               style="width:70%;float:left;" id="account_name_check1"/>
                                     </td>
                                 </tr>
                             </table>
@@ -167,7 +164,7 @@
                                 </td>
                                 </thead>
                             </table>
-                            <div class="userBtn">
+                            <div class="projectBtn">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a id="ExportBtn" type="submit" class="btn btn-warning ">
@@ -205,10 +202,10 @@
                                 </thead>
                             </table>
 
-                    </div>
+                        </div>
 
 
-                        <div class="userBtn">
+                        <div class="projectBtn">
                             <div class="row">
                                 <div class="col-md-12">
                                     <button class="btn btn-success save">保存</button>
@@ -217,53 +214,53 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
+
+
             </div>
-
-
         </div>
     </div>
-</div>
-<script>
-    var $table = $('#table');
+    <script>
+        var $table = $('#table');
 
-    $(function () {
-        var data = [
-            {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
-            },
-            {
-                "proId": 1,
-                "proName": "Item 1",
-                "pTName": "$1"
-            },
-            {
-                "proId": 2,
-                "proName": "Item 2",
-                "pTName": "$2"
-            },
-            {
-                "proId": 3,
-                "proName": "Item 3",
-                "pTName": "$3"
-            },
-            {
-                "proId": 4,
-                "proName": "Item 4",
-                "pTName": "$4"
-            },
-            {
-                "proId": 5,
-                "proName": "Item 5",
-                "pTName": "$5"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
+        $(function () {
+            var data = [
+                {
+                    "proId": 0,
+                    "proName": "Item 0",
+                    "pTName": "$0"
+                },
+                {
+                    "proId": 1,
+                    "proName": "Item 1",
+                    "pTName": "$1"
+                },
+                {
+                    "proId": 2,
+                    "proName": "Item 2",
+                    "pTName": "$2"
+                },
+                {
+                    "proId": 3,
+                    "proName": "Item 3",
+                    "pTName": "$3"
+                },
+                {
+                    "proId": 4,
+                    "proName": "Item 4",
+                    "pTName": "$4"
+                },
+                {
+                    "proId": 5,
+                    "proName": "Item 5",
+                    "pTName": "$5"
+                }
+            ];
+            $table.bootstrapTable({data: data});
+        });
 
 
-</script>
+    </script>
 </body>
 </html>

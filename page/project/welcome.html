@@ -36,7 +36,7 @@
                 <thead>
                 <tr>
                     <th data-field="proId">项目编号</th>
-                    <th data-field="proName">项目名称</th>
+                    <th data-field="proName" data-formatter="projectnameformat">项目名称</th>
                     <th data-field="pTName">项目类型</th>
                     <th data-field="proMoney">项目金额</th>
                     <th data-field="proBrokerage">经手人</th>
@@ -136,7 +136,10 @@
         ];
         $table.bootstrapTable({data: data});
     });
-
+    function projectnameformat(value, row, index) {
+        var data = encodeURI(JSON.stringify(row),"UTF-8");
+        return "<a href='project_detail_index.html?data="+data+"'>"+value+"</a>";
+    }
 
 </script>
 </body>
