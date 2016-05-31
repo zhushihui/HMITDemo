@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">@import "../../css/bootstrap.min.css";</style>
+<style type="text/css">@import "../../css/bootstrap-table.css";</style>
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+
+<body>
+<div style="width: 100%; margin-top: 50px;">
+    <div id="toolbar">
+        <a id="newProtect" type="submit" class="btn btn-success" href="new_project_schedule.html">
+            <i class="glyphicon glyphicon-plus"></i>新增项目进度
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p></p>
+            <table id="table"
+                   data-pagination="true"
+                   data-search="true"
+                   data-page-size="10"
+                   data-show-refresh="true"
+                   data-show-columns="true"
+                   data-width="100%"
+                   data-toolbar="#toolbar"
+                   data-show-export="true">
+
+                <thead>
+                <tr>
+                    <th data-field="proId">项目进度编号</th>
+                    <th data-field="proId">项目编号</th>
+                    <th data-field="proName" data-formatter="projectnameformat">项目名称</th>
+                    <th data-field="pTName">项目计划</th>
+                    <th data-field="proMoney">消耗工时</th>
+                    <th data-field="proBrokerage">消耗费用</th>
+                    <th data-field="cusId">负责人</th>
+                    <th data-field="conId">起始时间</th>
+                    <th data-field="signDate">截止时间</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 1,
+                "proName": "Item 1",
+                "pTName": "$1"
+            },
+            {
+                "proId": 2,
+                "proName": "Item 2",
+                "pTName": "$2"
+            },
+            {
+                "proId": 3,
+                "proName": "Item 3",
+                "pTName": "$3"
+            },
+            {
+                "proId": 4,
+                "proName": "Item 4",
+                "pTName": "$4"
+            },
+            {
+                "proId": 5,
+                "proName": "Item 5",
+                "pTName": "$5"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            },
+            {
+                "proId": 0,
+                "proName": "Item 0",
+                "pTName": "$0"
+            }
+        ];
+        $table.bootstrapTable({data: data});
+    });
+    function projectnameformat(value, row, index) {
+        var data = encodeURI(JSON.stringify(row),"UTF-8");
+        return "<a href='project_schedule_detail_index.html?data="+data+"'>"+value+"</a>";
+    }
+
+</script>
+</body>
+</html>

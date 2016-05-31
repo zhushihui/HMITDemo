@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+
+<body>
+<div class="project">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="projectmenu">
+                <div class="title">
+                    新增 供应商
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="#">采购发票</a></li>
+                        <li><a href="#">付款计划</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="projectform">
+                <div class="projectBtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-success save">保存</button>
+                            <button class="btn btn-danger cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projectforminput">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>基本信息</b>
+                                </td>
+                                </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>项目名称
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                               tabindex="" class="detailedViewTextBox"
+                                               onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"
+                                               style="width:70%;float:left;" id="proName"/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        项目类型
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        项目金额
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                               tabindex="" class="detailedViewTextBox"
+                                               onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"
+                                               style="width:70%;float:left;" id="account_name_check"/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        合同编号
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        执行时间
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input id="date-execution" type="text" onfocus="WdatePicker()" readonly/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        签订日期
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input id="date-sign" type="text" onfocus="WdatePicker()" readonly/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        预收日期
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input id="date-collet" type="text" onfocus="WdatePicker()" readonly/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>项目经理
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <select>
+                                            <option value ="1">请选择</option>
+                                            <option value ="2">李四</option>
+                                            <option value="3">王五</option>
+                                            <option value="4">张三</option>
+                                        </select>
+                                    </td>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        备注
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                               tabindex="" class="detailedViewTextBox"
+                                               onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"
+                                               style="width:70%;float:left;" id="account_name_check1"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>设备信息</b>
+                                </td>
+                                </thead>
+                            </table>
+                            <div class="projectBtn">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a id="ExportBtn" type="submit" class="btn btn-warning ">
+                                            <i class="glyphicon glyphicon-import"></i>
+                                            导入设备信息
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=10 class="editrelhead">
+                                    <b>采购单</b>
+                                </td>
+                                </thead> </table>
+                        </div><div class="row">
+                        <div>
+                            <table id="table">
+
+                                <thead>
+                                <tr>
+                                    <th data-field="proId">设备名称</th>
+                                    <th data-field="proName">品牌型号</th>
+                                    <th data-field="pTName">数量</th>
+                                    <th data-field="proMoney">销售单价</th>
+                                    <th data-field="proBrokerage">销售总价</th>
+                                    <th data-field="cusId">配置描述</th>
+                                    <th data-field="conId">批发</th>
+                                    <th data-field="signDate">操作</th>
+                                </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+
+
+                        <div class="projectBtn">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-success save">保存</button>
+                                    <button class="btn btn-danger cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var $table = $('#table');
+
+        $(function () {
+            var data = [
+                {
+                    "proId": 0,
+                    "proName": "Item 0",
+                    "pTName": "$0"
+                },
+                {
+                    "proId": 1,
+                    "proName": "Item 1",
+                    "pTName": "$1"
+                },
+                {
+                    "proId": 2,
+                    "proName": "Item 2",
+                    "pTName": "$2"
+                },
+                {
+                    "proId": 3,
+                    "proName": "Item 3",
+                    "pTName": "$3"
+                },
+                {
+                    "proId": 4,
+                    "proName": "Item 4",
+                    "pTName": "$4"
+                },
+                {
+                    "proId": 5,
+                    "proName": "Item 5",
+                    "pTName": "$5"
+                }
+            ];
+            $table.bootstrapTable({data: data});
+        });
+
+
+    </script>
+</body>
+</html>
