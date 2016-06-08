@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">@import "../../css/bootstrap.min.css";</style>
+<style type="text/css">@import "../../css/bootstrap-table.css";</style>
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+
+<body>
+<div style="width: 100%; margin-top: 50px;">
+    <div id="toolbar">
+        <a id="newreceipt" type="submit" class="btn btn-success" href="new_receipt.html">
+            <i class="glyphicon glyphicon-plus"></i>新增收款单
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p></p>
+            <table id="table"
+                   data-pagination="true"
+                   data-search="true"
+                   data-page-size="10"
+                   data-show-refresh="true"
+                   data-show-columns="true"
+                   data-width="100%"
+                   data-toolbar="#toolbar"
+                   data-show-export="true">
+
+                <thead>
+                <tr>
+                    <th data-field="receiptId" data-formatter="receiptnameformat">收款单编号</th>
+                    <th data-field="customerName">客户名称</th>
+                    <th data-field="payment">收款方式</th>
+                    <th data-field="total">合计</th>
+                    <th data-field="collectionDate">收款日期</th>
+                    <th data-field="leader">负责人</th>
+                    <th data-field="auditStatus">审核状态</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 1,
+                "customerName": "Item 1",
+                "payment": "$1"
+            },
+            {
+                "receiptId": 2,
+                "customerName": "Item 2",
+                "payment": "$2"
+            },
+            {
+                "receiptId": 3,
+                "customerName": "Item 3",
+                "payment": "$3"
+            },
+            {
+                "receiptId": 4,
+                "customerName": "Item 4",
+                "payment": "$4"
+            },
+            {
+                "receiptId": 5,
+                "customerName": "Item 5",
+                "payment": "$5"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            },
+            {
+                "receiptId": 0,
+                "customerName": "Item 0",
+                "payment": "$0"
+            }
+        ];
+        $table.bootstrapTable({data: data});
+    });
+    function receiptnameformat(value, row, index) {
+        var data = encodeURI(JSON.stringify(row),"UTF-8");
+        return "<a href='receipt_detail_index.html?data="+data+"'>"+value+"</a>";
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-table.css">
+    <style type="text/css">@import "../../css/global.css";</style>
+    <script src="../../js/jquery/jquery-1.12.3.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-table.js"></script>
+    <script src="../../js/export/bootstrap-table-export.js"></script>
+    <script src="../../js/export/tableExport.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $('.receiptform').load('receipt_form.html', function () {
+            var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+            row = decodeURI(row, "UTF-8");
+            var obj = JSON.parse(row);
+            $('#receiptId').text(obj.name);
+            $('.title').text(obj.name);
+        });
+    });
+</script>
+<div class="receipt">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="receiptmenu">
+                <div class="title">
+                    新增  收款单
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="receiptform">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

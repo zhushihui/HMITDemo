@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-table.css">
+    <style type="text/css">@import "../../css/global.css";</style>
+    <script src="../../js/jquery/jquery-1.12.3.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-table.js"></script>
+    <script src="../../js/export/bootstrap-table-export.js"></script>
+    <script src="../../js/export/tableExport.js"></script>
+</head>
+<body>
+<div class="paymentDetailBtn">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success return" onclick="window.history.back();">
+                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+            </button>
+            <button class="btn btn-danger new">
+                <i class="glyphicon glyphicon-plus"></i>新建
+            </button>
+            <button class="btn btn-warning copy">
+                <i class="glyphicon glyphicon-copyright-mark"></i>复制
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="paymentforminput">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                <thead>
+                <td colspan=4 class="editrelhead">
+                    <b>基本信息</b>
+                </td>
+                </thead>
+                <tr>
+                    <td width="20%" class="DetailedTd1Label" align="right">
+                        <i style="color: red">*</i>付款单编号
+                    </td>
+                    <td id="proName" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                    <td width="20%" class="DetailedTd1Label" align="right">
+                        付款方式
+                    </td>
+                    <td id="proId" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="20%" class="DetailedTd1Label" align="right">
+                        合计
+                    </td>
+                    <td id="pTName" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                    <td width="20%" class="DetailedTd1Label" align="right">
+                        付款日期
+                    </td>
+                    <td id="proMoney" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="20%" class="DetailedTd1Label" align="right">
+                        负责人
+                    </td>
+                    <td id="proBrokerage" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                </tr>
+                </tr>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

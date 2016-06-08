@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-table.css">
+    <style type="text/css">@import "../../css/global.css";</style>
+    <script src="../../js/jquery/jquery-1.12.3.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-table.js"></script>
+    <script src="../../js/export/bootstrap-table-export.js"></script>
+    <script src="../../js/export/tableExport.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $('.purchase_invoiceform').load('purchase_invoice_form.html', function () {
+            var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+            row = decodeURI(row, "UTF-8");
+            var obj = JSON.parse(row);
+            $('#invoiceId').text(obj.name);
+            $('.title').text(obj.name);
+        });
+    });
+</script>
+<div class="purchase_invoice">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="purchase_invoicemenu">
+                <div class="title">
+                    新增  采购订单
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                        <li><a href="javascript:void(0);" onclick=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="purchase_invoiceform">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

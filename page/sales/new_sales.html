@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+
+<body>
+<div class="sales">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="salesmenu">
+                <div class="title">
+                    新增 销售发票
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="salesform">
+                <div class="salesBtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-success save">保存</button>
+                            <button class="btn btn-danger cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salesforminput">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>基本信息</b>
+                                </td>
+                                </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>发票编号
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                               tabindex="" class="detailedViewTextBox"
+                                               onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"
+                                               id="contactPersonName"/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        主要联系人
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        联系电话
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no111"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        地址
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        业务代表
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no11"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        应付款
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no112"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>备注信息</b>
+                                </td>
+                                </thead>
+                            </table>
+                            <tr>
+                                <td width="20%" class="DetailedTd1Label" align="right">
+                                    <i style="color: red">*</i>备注
+                                </td>
+                                <td width="30%" align="left" class="DetailedTd2Info">
+
+                                    <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                           tabindex="" class="detailedViewTextBox"
+                                           onfocus="this.className='detailedViewTextBoxOn'"
+                                           onBlur="this.className='detailedViewTextBox'"
+                                           id="contactPersonName1"/>
+                                </td>
+                            </tr>
+                        </div>
+
+                        <div class="salesBtn">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-success save">保存</button>
+                                    <button class="btn btn-danger cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+            {
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
+            },
+            {
+                "supName": 1,
+                "contactPersonName": "Item 1",
+                "contact": "$1"
+            },
+            {
+                "supName": 2,
+                "contactPersonName": "Item 2",
+                "contact": "$2"
+            },
+            {
+                "supName": 3,
+                "contactPersonName": "Item 3",
+                "contact": "$3"
+            },
+            {
+                "supName": 4,
+                "contactPersonName": "Item 4",
+                "contact": "$4"
+            },
+            {
+                "supName": 5,
+                "contactPersonName": "Item 5",
+                "contact": "$5"
+            }
+        ];
+        $table.bootstrapTable({data: data});
+    });
+
+
+</script>
+</body>
+</html>

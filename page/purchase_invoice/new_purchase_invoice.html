@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+
+<body>
+<div class="purchase_invoice">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="purchase_invoicemenu">
+                <div class="title">
+                    新增 采购发票
+                </div>
+                <div class="info">
+                    相关信息
+                </div>
+                <div class="menulist">
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="purchase_invoiceform">
+                <div class="purchase_invoiceBtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-success save">保存</button>
+                            <button class="btn btn-danger cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="purchase_invoiceforminput">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>基本信息</b>
+                                </td>
+                                </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        <i style="color: red">*</i>发票编号
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+
+                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                               tabindex="" class="detailedViewTextBox"
+                                               onfocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"
+                                               id="total"/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        合计
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        开票日期
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input class="Wdate" id="date-execution1" type="text" onfocus="WdatePicker()" readonly/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        供应商
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        创建日期
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input class="Wdate" id="date-execution12" type="text" onfocus="WdatePicker()" readonly/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                                <thead>
+                                <td colspan=4 class="editrelhead">
+                                    <b>备注信息</b>
+                                </td>
+                                </thead>
+                            </table>
+                            <tr>
+                                <td width="20%" class="DetailedTd1Label" align="right">
+                                    <i style="color: red">*</i>备注
+                                </td>
+                                <td width="30%" align="left" class="DetailedTd2Info">
+
+                                    <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                           tabindex="" class="detailedViewTextBox"
+                                           onfocus="this.className='detailedViewTextBoxOn'"
+                                           onBlur="this.className='detailedViewTextBox'"
+                                           id="total1"/>
+                                </td>
+                            </tr>
+                        </div>
+
+                        <div class="purchase_invoiceBtn">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-success save">保存</button>
+                                    <button class="btn btn-danger cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+            {
+                "invoiceId": 0,
+                "total": "Item 0",
+                "invoiceDate": "$0"
+            },
+            {
+                "invoiceId": 1,
+                "total": "Item 1",
+                "invoiceDate": "$1"
+            },
+            {
+                "invoiceId": 2,
+                "total": "Item 2",
+                "invoiceDate": "$2"
+            },
+            {
+                "invoiceId": 3,
+                "total": "Item 3",
+                "invoiceDate": "$3"
+            },
+            {
+                "invoiceId": 4,
+                "total": "Item 4",
+                "invoiceDate": "$4"
+            },
+            {
+                "invoiceId": 5,
+                "total": "Item 5",
+                "invoiceDate": "$5"
+            }
+        ];
+        $table.bootstrapTable({data: data});
+    });
+
+
+</script>
+</body>
+</html>
