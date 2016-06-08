@@ -15,6 +15,43 @@
 </head>
 <body>
 
+<script>
+
+    function xiangmu() {
+        $('.ifr').attr('src','../page/project/index.html');
+    }
+    function xiangmujindu() {
+        $('.ifr').attr('src','../page/project/project_schedule.html');
+    }
+    function xiaoshoufapiao() {
+        $('.ifr').attr('src','../page/sales/index.html');
+    }
+    function caigoufapiao() {
+        $('.ifr').attr('src','../page/purchase_invoice/index.html');
+    }
+    function shoukuandan() {
+        $('.ifr').attr('src','../page/receipt/index.html');
+    }
+    function fukuandan() {
+        $('.ifr').attr('src','../page/payment/index.html');
+    }
+    function fukuanjihua() {
+        $('.ifr').attr('src','../page/paymentplan/index.html');
+    }
+    function gongyingshang() {
+        $('.ifr').attr('src','../page/supplier/index.html');
+    }
+    function caigoudingdan() {
+        $('.ifr').attr('src','../page/purchase/index.html');
+    }
+    function shouye() {
+        $('.ifr').attr('src','../page/index.html');
+    }
+    function kehu() {
+        $('.ifr').attr('src','../page/customer/index.html');
+    }
+
+</script>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -29,28 +66,29 @@
 
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li><a href="../page/index.html">首页</a></li>
-            <li><a href="../page/customer/index.html">客户</a></li>
+            <li><a href="javascript:void(0);" onclick="shouye();">首页</a> </li>
+            <li><a href="javascript:void(0);" onclick="kehu();">客户</a> </li>
             <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-expanded="false">项目<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="../page/project/index.html">项目</a></li>
-                    <li><a href="../page/project/project_schedule.html">项目进度</a></li>
+                    <li><a href="javascript:void(0);" onclick="xiangmu();">项目</a> </li>
+                    <li><a href="javascript:void(0);" onclick="xiangmujindu();">项目进度</a> </li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-expanded="false">财务<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">销售发票</a></li>
+                    <li><a href="javascript:void(0);" onclick="xiaoshoufapiao();">销售发票</a> </li>
 
-                    <li><a href="#">采购发票</a></li>
+                    <li><a href="javascript:void(0);" onclick="caigoufapiao();">采购发票</a> </li>
 
-                    <li><a href="#">收款单</a></li>
+                    <li><a href="javascript:void(0);" onclick="shoukuandan();">收款单</a> </li>
 
-                    <li><a href="#">付款单</a></li>
-                    <li><a href="#">付款计划</a></li>
+                    <li><a href="javascript:void(0);" onclick="fukuandan();">付款单</a> </li>
+
+                    <li><a href="javascript:void(0);" onclick="fukuanjihua();">付款计划</a> </li>
 
                     <li><a href="#">汇款计划</a></li>
                 </ul>
@@ -59,8 +97,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-expanded="false">采购<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="../page/supplier/index.html">供应商</a></li>
-                    <li><a href="../page/supplier/index.html">采购订单</a></li>
+                    <li><a href="javascript:void(0);" onclick="gongyingshang();">供应商</a> </li>
+
+                    <li><a href="javascript:void(0);" onclick="caigoudingdan();">采购订单</a> </li>
                 </ul>
             </li>
             <li>
@@ -85,11 +124,12 @@
 </nav>
 
 <div class="content">
-    <iframe width="100%" height="100%"></iframe>
+    <iframe class="ifr" width="100%" height="100%" scrolling="no"></iframe>
 </div>
-<div class="Footer">
+<div class="footer">
     汇民CRM V1.0.0<br/>宁波汇民信息科技有限公司。联系方式：0574-26267022
 </div>
+
 
 </body>
 </html>

@@ -37,15 +37,6 @@
 
         <div class="col-md-10">
             <div class="projectform">
-                <div class="projectBtn">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-success save">保存</button>
-                            <button class="btn btn-danger cancel">取消</button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="projectforminput">
                     <div class="row">
 
@@ -109,14 +100,14 @@
                                         执行时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="date-execution" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-execution" type="text" onfocus="WdatePicker()"readonly/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         签订日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="date-sign" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-sign" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                 </tr>
@@ -125,7 +116,7 @@
                                         预收日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="date-collet" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-collet" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
@@ -133,7 +124,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <select>
-                                            <option value ="1">请选择</option>
+                                            <option value ="1">&nbsp;请选择&nbsp;&nbsp;</option>
                                             <option value ="2">李四</option>
                                             <option value="3">王五</option>
                                             <option value="4">张三</option>
@@ -220,6 +211,7 @@
 
             </div>
         </div>
+    </div>
     </div>
     <script>
         var $table = $('#table');

@@ -35,12 +35,12 @@
 
                 <thead>
                 <tr>
-                    <th data-field="proId">供应商名称</th>
-                    <th data-field="proName" data-formatter="suppliernameformat">主要联系人</th>
-                    <th data-field="pTName">联系电话</th>
-                    <th data-field="proMoney">地址</th>
-                    <th data-field="proBrokerage">业务代表</th>
-                    <th data-field="cusId">应付款</th>
+                    <th data-field="supName" data-formatter="suppliernameformat">供应商名称</th>
+                    <th data-field="contactPersonName">主要联系人</th>
+                    <th data-field="contact">联系电话</th>
+                    <th data-field="address">地址</th>
+                    <th data-field="empId">业务代表</th>
+                    <th data-field="totalPaymentAmount">应付款</th>
                 </tr>
                 </thead>
             </table>
@@ -56,78 +56,78 @@
     $(function () {
         var data = [
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 1,
-                "proName": "Item 1",
-                "pTName": "$1"
+                "supName": 1,
+                "contactPersonName": "Item 1",
+                "contact": "$1"
             },
             {
-                "proId": 2,
-                "proName": "Item 2",
-                "pTName": "$2"
+                "supName": 2,
+                "contactPersonName": "Item 2",
+                "contact": "$2"
             },
             {
-                "proId": 3,
-                "proName": "Item 3",
-                "pTName": "$3"
+                "supName": 3,
+                "contactPersonName": "Item 3",
+                "contact": "$3"
             },
             {
-                "proId": 4,
-                "proName": "Item 4",
-                "pTName": "$4"
+                "supName": 4,
+                "contactPersonName": "Item 4",
+                "contact": "$4"
             },
             {
-                "proId": 5,
-                "proName": "Item 5",
-                "pTName": "$5"
+                "supName": 5,
+                "contactPersonName": "Item 5",
+                "contact": "$5"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },            {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             },
             {
-                "proId": 0,
-                "proName": "Item 0",
-                "pTName": "$0"
+                "supName": 0,
+                "contactPersonName": "Item 0",
+                "contact": "$0"
             }
         ];
         $table.bootstrapTable({data: data});

@@ -62,7 +62,7 @@ a:focus,a:active,textarea,input{outline:none;}
     z-index: 20;
 
 }*/
-.Footer { float:left; width:100%; border-top: 1px solid #e5e5e5; text-align: center; margin-top: 50px; position: fixed}
+.footer { float:left; width:100%; border-top: 1px solid #e5e5e5; text-align: center; margin-top: 50px; position: fixed}
 
 
 
@@ -92,7 +92,7 @@ a:focus,a:active,textarea,input{outline:none;}
 
 .user .userform {
     border: 1px solid grey;
-    height: 800px;
+    height: 550px;
     width: auto;
 
 
@@ -178,7 +178,7 @@ a:focus,a:active,textarea,input{outline:none;}
 
 .project .projectform {
     border: 1px solid grey;
-    height: 800px;
+    height: 694px;
     width: auto;
 
 
@@ -215,15 +215,15 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .projectform .projectBtn {
 
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    border-bottom: 1px solid;
-    height: 45px;
-    line-height: 10px;
+     width: 100%;
+     text-align: center;
+     margin-top: 10px;
+     border-bottom: 1px solid;
+     height: 45px;
+     line-height: 10px;
 
 
-}
+ }
 .projectform .projectBtn .save {
     width: 80px;
     margin-right: 10px;
@@ -237,13 +237,99 @@ a:focus,a:active,textarea,input{outline:none;}
     padding: 0;
 
 }
+
+
+
+
+.supplierheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.supplier {
+    width: auto;
+    margin-top: 80px;
+
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.supplier .suppliermenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+
+.supplier .supplierform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.supplier .suppliermenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.supplier .suppliermenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+
+
+.supplierform .supplierBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.supplierform .supplierBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.supplierform .supplierBtn .cancel {
+    width: 80px;
+
+}
+.supplierforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+
+
+
+
+
 .editrelhead{background:#EDF3FE !important;line-height: 30px;height:30px;/* border-top:1px #ddd solid; margin-bottom:1px;padding:8px;*/padding-left: 10px;}
 .DetailContentTable{border-collapse: collapse;}
 .DetailContentTable tr td{height:30px;/*line-height:30px;*/border-bottom:1px solid #dedede;border-right:1px solid #dedede;/*border-top:1px solid #ddd;*/}
 
 .DetailedTd1Label{ background-color: #fafafa !important; color: #333;}
 
-.DetailedTd2Info{ color: #555; padding-left: 10px; padding-right: 5px;}
+.DetailedTd2Info{ color: black; padding-left: 10px; padding-right: 5px;}
 .detailedViewTextBox {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
@@ -256,6 +342,9 @@ a:focus,a:active,textarea,input{outline:none;}
      border: 1px solid grey;
  }
 .projectforminput .table tr td {
+    border: 1px solid grey;
+}
+.supplierforminput .table tr td {
     border: 1px solid grey;
 }
 
@@ -319,6 +408,26 @@ a:focus,a:active,textarea,input{outline:none;}
 
 }
 
+.supplierform .supplierDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.supplierform .supplierDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.supplierform .supplierDetailBtn button i {
+    padding-right: 5px;
+
+}
+
 /*contract_order*/
 
 .path {
@@ -335,4 +444,646 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .path p i {
     color: #269abc;
+}
+
+/*purchase css*/
+.purchaseheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.purchase {
+    width: auto;
+    margin-top: 80px;
+
+}
+.purchase .purchasemenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.purchase .purchaseform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.purchase .purchasemenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.purchase .purchasemenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.purchaseform .purchaseBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.purchaseform .purchaseBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.purchaseform .purchaseBtn .cancel {
+    width: 80px;
+
+}
+.purchaseforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.purchaseforminput .table tr td {
+    border: 1px solid grey;
+}
+.purchaseform .purchaseDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.purchaseform .purchaseDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.purchaseform .purchaseDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.salesheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.sales {
+    width: auto;
+    margin-top: 80px;
+
+}
+.sales .salesmenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.sales .salesform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.sales .salesmenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.sales .salesmenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.salesform .salesBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.salesform .salesBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.salesform .salesBtn .cancel {
+    width: 80px;
+
+}
+.salesforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.salesforminput .table tr td {
+    border: 1px solid grey;
+}
+.salesform .salesDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.salesform .salesDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.salesform .salesDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.purchase_invoiceheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.purchase_invoice {
+    width: auto;
+    margin-top: 80px;
+
+}
+.purchase_invoice .purchase_invoicemenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.purchase_invoice .purchase_invoiceform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.purchase_invoice .purchase_invoicemenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.purchase_invoice .purchase_invoicemenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.purchase_invoiceform .purchase_invoiceBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.purchase_invoiceform .purchase_invoiceBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.purchase_invoiceform .purchase_invoiceBtn .cancel {
+    width: 80px;
+
+}
+.purchase_invoiceforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.purchase_invoiceforminput .table tr td {
+    border: 1px solid grey;
+}
+.purchase_invoiceform .purchase_invoiceDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.purchase_invoiceform .purchase_invoiceDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.purchase_invoiceform .purchase_invoiceDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.receiptheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.receipt {
+    width: auto;
+    margin-top: 80px;
+
+}
+.receipt .receiptmenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.receipt .receiptform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.receipt .receiptmenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.receipt .receiptmenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.receiptform .receiptBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.receiptform .receiptBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.receiptform .receiptBtn .cancel {
+    width: 80px;
+
+}
+.receiptforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.receiptforminput .table tr td {
+    border: 1px solid grey;
+}
+.receiptform .receiptDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.receiptform .receiptDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.receiptform .receiptDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.paymentheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.payment {
+    width: auto;
+    margin-top: 80px;
+
+}
+.payment .paymentmenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.payment .paymentform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.payment .paymentmenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.payment .paymentmenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.paymentform .paymentBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentform .paymentBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.paymentform .paymentBtn .cancel {
+    width: 80px;
+
+}
+.paymentforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.paymentforminput .table tr td {
+    border: 1px solid grey;
+}
+.paymentform .paymentDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentform .paymentDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.paymentform .paymentDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.paymentplanheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.paymentplan {
+    width: auto;
+    margin-top: 80px;
+
+}
+.paymentplan .paymentplanmenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.paymentplan .paymentplanform {
+    border: 1px solid grey;
+    height: 550px;
+    width: auto;
+
+
+}
+.paymentplan .paymentplanmenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.paymentplan .paymentplanmenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.paymentplanform .paymentplanBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentplanform .paymentplanBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.paymentplanform .paymentplanBtn .cancel {
+    width: 80px;
+
+}
+.paymentplanforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.paymentplanforminput .table tr td {
+    border: 1px solid grey;
+}
+.paymentplanform .paymentplanDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentplanform .paymentplanDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.paymentplanform .paymentplanDetailBtn button i {
+    padding-right: 5px;
+
+}
+.footer{
+    position: absolute;  bottom: 0;
+    left:0;
+    height: 40px;
+}
+
+
+.projectscheduleheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.projectschedule {
+    width: auto;
+    margin-top: 80px;
+
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.projectschedule .projectschedulemenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+
+.projectschedule .projectscheduleform {
+    border: 1px solid grey;
+    height: 494px;
+    width: auto;
+
+
+}
+.projectschedule .projectschedulemenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.projectschedule .projectschedulemenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.projectscheduleform .projectscheduleBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.projectscheduleform .projectscheduleBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.projectscheduleform .projectscheduleBtn .cancel {
+    width: 80px;
+
+}
+.projectscheduleforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.projectscheduleforminput .table tr td {
+    border: 1px solid grey;
+}
+.projectscheduleform .projectscheduleDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.projectscheduleform .projectscheduleDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.projectscheduleform .projectscheduleDetailBtn button i {
+    padding-right: 5px;
+
 }

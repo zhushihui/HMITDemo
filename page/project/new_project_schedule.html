@@ -16,10 +16,10 @@
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
 
 <body>
-<div class="project">
+<div class="projectschedule">
     <div class="row">
         <div class="col-md-2">
-            <div class="projectmenu">
+            <div class="projectschedulemenu">
                 <div class="title">
                     新增 项目进度
                 </div>
@@ -36,8 +36,8 @@
         </div>
 
         <div class="col-md-10">
-            <div class="projectform">
-                <div class="projectBtn">
+            <div class="projectscheduleform">
+                <div class="projectscheduleBtn">
                     <div class="row">
                         <div class="col-md-12">
                             <button class="btn btn-success save">保存</button>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="projectforminput">
+                <div class="projectscheduleforminput">
                     <div class="row">
 
                         <div class="col-md-12">
@@ -119,7 +119,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <select>
-                                            <option value ="1">请选择</option>
+                                            <option value ="1">&nbsp;请选择&nbsp;&nbsp;</option>
                                             <option value ="2">李四</option>
                                             <option value="3">王五</option>
                                             <option value="4">张三</option>
@@ -131,14 +131,14 @@
                                         起始日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="date-start" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-start" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         截止日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="date-end" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-end" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
                                 </tr>
                             </table>
@@ -166,15 +166,6 @@
                                            id="proName1"/>
                                 </td>
                             </tr>
-                        </div>
-
-                        <div class="projectBtn">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button class="btn btn-success save">保存</button>
-                                    <button class="btn btn-danger cancel">取消</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     </div>
