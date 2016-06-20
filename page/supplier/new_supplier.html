@@ -28,27 +28,16 @@
                 </div>
                 <div class="menulist">
                     <ul>
-                        <li><a href="#">采购发票</a></li>
-                        <li><a href="#">付款计划</a></li>
+                        <li>采购发票</li>
+                        <li>付款计划</li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="col-md-10">
             <div class="supplierform">
-                <div class="supplierBtn">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-success save">保存</button>
-                            <button class="btn btn-danger cancel">取消</button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="supplierforminput">
                     <div class="row">
-
                         <div class="col-md-12">
                             <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
@@ -126,44 +115,33 @@
                                 </tr>
                             </table>
                         </div>
-
-
-                        <div class="col-md-12">
-                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                        <div class="supplierforminput">
+                            <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
                                 <td colspan=4 class="editrelhead">
                                     <b>备注信息</b>
                                 </td>
                                 </thead>
+                                <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        备注
+                                    </td>
+                                    <td width="80%" align="left" class="DetailedTd2Info">
+                                <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
+                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          style="height:50px"></textarea>
+                                    </td>
+                                </tr>
                             </table>
-                            <tr>
-                                <td width="20%" class="DetailedTd1Label" align="right">
-                                    <i style="color: red">*</i>备注
-                                </td>
-                                <td width="30%" align="left" class="DetailedTd2Info">
-
-                                    <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
-                                           tabindex="" class="detailedViewTextBox"
-                                           onfocus="this.className='detailedViewTextBoxOn'"
-                                           onBlur="this.className='detailedViewTextBox'"
-                                           id="contactPersonName1"/>
-                                </td>
-                            </tr>
-                        </div>
-
-                        <div class="supplierBtn">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button class="btn btn-success save">保存</button>
-                                    <button class="btn btn-danger cancel">取消</button>
-                                </div>
+                            <div class="supplierBtn">
+                                <button class="btn btn-success save">保存</button>
+                                <button class="btn btn-danger cancel">取消</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

@@ -92,7 +92,6 @@ a:focus,a:active,textarea,input{outline:none;}
 
 .user .userform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -133,7 +132,7 @@ a:focus,a:active,textarea,input{outline:none;}
     text-align: center;
     margin-top: 10px;
     border-bottom: 1px solid;
-    height: 45px;
+    height: 39px;
     line-height: 10px;
 
 
@@ -178,7 +177,6 @@ a:focus,a:active,textarea,input{outline:none;}
 
 .project .projectform {
     border: 1px solid grey;
-    height: 694px;
     width: auto;
 
 
@@ -214,16 +212,13 @@ a:focus,a:active,textarea,input{outline:none;}
     background-color: #bbbbbb;
 }
 .projectform .projectBtn {
-
-     width: 100%;
-     text-align: center;
-     margin-top: 10px;
-     border-bottom: 1px solid;
-     height: 45px;
-     line-height: 10px;
-
-
- }
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+}
 .projectform .projectBtn .save {
     width: 80px;
     margin-right: 10px;
@@ -266,7 +261,6 @@ a:focus,a:active,textarea,input{outline:none;}
 
 .supplier .supplierform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -339,11 +333,46 @@ a:focus,a:active,textarea,input{outline:none;}
     background-color:#ffffff;
 }
 .userforminput .table tr td {
-     border: 1px solid grey;
- }
+    border: 1px solid grey;
+}
 .projectforminput .table tr td {
     border: 1px solid grey;
 }
+/*bootstrap table 下有空余;*/
+.projectform .projectforminput .table {
+    margin-bottom: 0;
+}
+.userform .userforminput .table {
+    margin-bottom: 0;
+}
+.projectscheduleform .projectscheduleforminput .table {
+    margin-bottom: 0;
+}
+.purchase_invoiceform .purchase_invoiceforminput .table {
+    margin-bottom: 0;
+}
+ .receiptform .receiptforminput .table {
+     margin-bottom: 0;
+ }
+.salesform .salesforminput .table {
+    margin-bottom: 0;
+}
+.paymentform .paymentforminput .table {
+    margin-bottom: 0;
+}
+.paymentplanform .paymentplanforminput .table {
+    margin-bottom: 0;
+}
+.purchaseform .purchaseforminput .table {
+     margin-bottom: 0;
+ }
+.supplierform .supplierforminput .table {
+    margin-bottom: 0;
+}
+
+
+
+
 .supplierforminput .table tr td {
     border: 1px solid grey;
 }
@@ -467,10 +496,7 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .purchase .purchaseform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
-
-
 }
 .purchase .purchasemenu .title {
     height: 35px;
@@ -537,7 +563,7 @@ a:focus,a:active,textarea,input{outline:none;}
 
 }
 
-.salesheader {
+.header {
     margin-top: 50px;
     height: 20px;
     width: auto;
@@ -557,7 +583,6 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .sales .salesform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -585,11 +610,8 @@ a:focus,a:active,textarea,input{outline:none;}
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    border-bottom: 1px solid;
     height: 45px;
     line-height: 10px;
-
-
 }
 .salesform .salesBtn .save {
     width: 80px;
@@ -614,8 +636,6 @@ a:focus,a:active,textarea,input{outline:none;}
     border-bottom: 1px solid;
     height: 45px;
     line-height: 10px;
-
-
 }
 .salesform .salesDetailBtn button {
     width: 100px;
@@ -647,7 +667,6 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .purchase_invoice .purchase_invoiceform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -737,7 +756,6 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .receipt .receiptform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -827,10 +845,7 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .payment .paymentform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
-
-
 }
 .payment .paymentmenu .title {
     height: 35px;
@@ -917,7 +932,6 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 .paymentplan .paymentplanform {
     border: 1px solid grey;
-    height: 550px;
     width: auto;
 
 
@@ -986,12 +1000,95 @@ a:focus,a:active,textarea,input{outline:none;}
     padding-right: 5px;
 
 }
-.footer{
-    position: absolute;  bottom: 0;
-    left:0;
-    height: 40px;
+
+.paymentheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.payment {
+    width: auto;
+    margin-top: 80px;
+
+}
+.payment .paymentmenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.payment .paymentform {
+    border: 1px solid grey;
+    width: auto;
+
+
+}
+.payment .paymentmenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
 }
 
+.payment .paymentmenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.paymentform .paymentBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentform .paymentBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.paymentform .paymentBtn .cancel {
+    width: 80px;
+
+}
+.paymentforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.paymentforminput .table tr td {
+    border: 1px solid grey;
+}
+.paymentform .paymentDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.paymentform .paymentDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.paymentform .paymentDetailBtn button i {
+    padding-right: 5px;
+
+}
 
 .projectscheduleheader {
     margin-top: 50px;
@@ -1004,10 +1101,6 @@ a:focus,a:active,textarea,input{outline:none;}
     margin-top: 80px;
 
 }
-.row {
-    margin-left: 0px;
-    margin-right: 0px;
-}
 .projectschedule .projectschedulemenu
 {
     border: 1px solid grey;
@@ -1015,10 +1108,8 @@ a:focus,a:active,textarea,input{outline:none;}
     width: auto;
 
 }
-
 .projectschedule .projectscheduleform {
     border: 1px solid grey;
-    height: 494px;
     width: auto;
 
 
@@ -1086,4 +1177,11 @@ a:focus,a:active,textarea,input{outline:none;}
 .projectscheduleform .projectscheduleDetailBtn button i {
     padding-right: 5px;
 
+}
+
+
+.footer{
+    position: absolute;  bottom: 0;
+    left:0;
+    height: 40px;
 }

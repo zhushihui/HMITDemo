@@ -17,18 +17,14 @@
     <div class="row">
         <div class="col-md-12">
             <button class="btn btn-success return" onclick="window.history.back();">
-                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表</button>
-            <button class="btn btn-danger new">
-                <i class="glyphicon glyphicon-plus"></i>新建</button>
-            <button class="btn btn-warning copy">
-                <i class="glyphicon glyphicon-copyright-mark"></i>复制</button>
+                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+            </button>
         </div>
     </div>
 </div>
 
 <div class="userforminput">
     <div class="row">
-
         <div class="col-md-12">
             <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
                 <thead>
@@ -62,21 +58,51 @@
                 </tr>
                 <tr>
                     <td width="20%" class="DetailedTd1Label" align="right">
+                        联系人
+                    </td>
+                    <td id="contactPerson" width="30%" align="left" class="DetailedTd2Info">
+                    </td>
+                    <td width="20%" class="DetailedTd1Label" align="right">
                         联系方式
                     </td>
                     <td id="contact" width="30%" align="left" class="DetailedTd2Info">
                     </td>
+                </tr>
+                <tr>
                     <td width="20%" class="DetailedTd1Label" align="right">
                         负责人
                     </td>
                     <td id="empId" width="30%" align="left" class="DetailedTd2Info">
                     </td>
                 </tr>
-
-
             </table>
         </div>
-
+        <div class="userforminput">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                        <thead>
+                        <td colspan=4 class="editrelhead">
+                            <b>备注信息</b>
+                        </td>
+                        </thead>
+                        <tr>
+                            <td width="20%" class="DetailedTd1Label" align="right">
+                                备注
+                            </td>
+                            <td width="80%" align="left" class="DetailedTd2Info">
+                                <input type="text" style="width:850px;" fieldonly='1' name="accountname"
+                                       tabindex="" value=""
+                                       tabindex="" class="detailedViewTextBox"
+                                       onfocus="this.className='detailedViewTextBoxOn'"
+                                       onBlur="this.className='detailedViewTextBox'"
+                                       id="contactPersonName1"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
@@ -26,33 +25,22 @@
                 </div>
                 <div class="menulist">
                     <ul>
-                        <li><a href="#">合同订单</a> </li>
-                        <li><a href="../paymentplan/index.html">付款计划</a> </li>
-                        <li><a href="../purchase_invoice/index.html">收款单</a> </li>
-                        <li><a href="#">服务合同</a> </li>
-                        <li><a href="../project/index.html">项目</a> </li>
-                        <li><a href="../sales/index.html">销售发票</a> </li>
+                        <li>合同订单</li>
+                        <li>付款计划</li>
+                        <li>收款单</li>
+                        <li>服务合同</li>
+                        <li>项目</li>
+                        <li>销售发票</li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="col-md-10">
             <div class="userform">
-                <div class="userBtn">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-success save">保存</button>
-                            <button class="btn btn-danger cancel" onclick="window.history.back();">取消</button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="userforminput">
                     <div class="row">
-
                         <div class="col-md-12">
-                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                            <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
                                 <td colspan=4 class="editrelhead">
                                     <b>基本信息</b>
@@ -63,83 +51,117 @@
                                         <i style="color: red">*</i>客户编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" style="width:260px;" fieldonly='1' name="accountname"
+                                               tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
                                                id="contactPersonName"/>
                                     </td>
-
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        客户名称
+                                        <i style="color: red">*</i>客户名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" style="float:left;width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
+                                        <input type="button" id="check" name="check"
+                                               onclick="look_check_repeat(this,'Accounts');"
+                                               class="Button_clearD Button_check" value="查重"/>
                                     </td>
-
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         总应收账款
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no221"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no"
+                                               id="account_no221"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
-
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        地点
+                                        地址
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no1"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
-
                                 </tr>
                                 <tr>
+                                    <td width="20%" class="DetailedTd1Label" align="right">
+                                        联系人
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no11"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"/>
+                                    </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         联系方式
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no11"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no21"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         负责人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no21"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no2"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
                                 </tr>
-
-
                             </table>
                         </div>
-
+                    </div>
+                </div>
+                <div class="userforminput">
+                    <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
+                        <thead>
+                        <td colspan=4 class="editrelhead">
+                            <b>备注信息</b>
+                        </td>
+                        </thead>
+                        <tr>
+                            <td width="20%" class="DetailedTd1Label" align="right">
+                                备注
+                            </td>
+                            <td width="80%" align="left" class="DetailedTd2Info">
+                                <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
+                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          style="height:50px"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="userBtn">
+                        <button class="btn btn-success save">保存</button>
+                        <button class="btn btn-danger cancel">取消</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-
-
 </div>
-
+</div>
 </body>
 </html>

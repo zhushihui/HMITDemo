@@ -4,7 +4,69 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
 <body>
+<div class="path">
+    <div class="row">
+        <div class="col-md-12">
+            <p>相关信息 >> <i>销售发票</i></p>
+        </div>
+    </div>
+</div>
+<div class="userDetailBtn">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success return" onclick="window.history.back();">
+                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+            </button>
+            <button class="btn btn-danger new" onclick="window.location.reload(url)">
+                <i class="glyphicon glyphicon-plus"></i>新建
+            </button>
+        </div>
+    </div>
+</div>
+<div>
+    <table id="table">
+        <thead>
 
+        <tr>
+            <th data-field="projectName">发票编号</th>
+            <th data-field="proName">主题</th>
+            <th data-field="pTName">票据类型</th>
+            <th data-field="proMoney">合计</th>
+            <th data-field="proBrokerage">开票日期</th>
+            <th data-field="cusId">负责人</th>
+            <th data-field="cz">源单</th>
+            <th data-field="projectManager">操作</th>
+
+        </thead>
+    </table>
+</div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+        ];
+        $table.bootstrapTable({data: data});
+    });
+
+    $(function() {
+        var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+        row = decodeURI(row,"UTF-8");
+        var obj =JSON.parse(row);
+        url = '../sales/new_sales.html?customerName=' + obj.name;
+    });
+
+
+</script>
 </body>
 </html>

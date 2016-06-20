@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
@@ -14,7 +13,6 @@
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
-
 <body>
 <div class="projectschedule">
     <div class="row">
@@ -26,31 +24,14 @@
                 <div class="info">
                     相关信息
                 </div>
-                <div class="menulist">
-                    <ul>
-                        <li><a href="project_schedule.html">项目进度</a></li>
-                        <li><a href="purchasing_information.html">采购信息</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
-
         <div class="col-md-10">
             <div class="projectscheduleform">
-                <div class="projectscheduleBtn">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-success save">保存</button>
-                            <button class="btn btn-danger cancel">取消</button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="projectscheduleforminput">
                     <div class="row">
-
                         <div class="col-md-12">
-                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
+                            <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
                                 <td colspan=4 class="editrelhead">
                                     <b>基本信息</b>
@@ -61,160 +42,139 @@
                                         <i style="color: red">*</i>项目名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input id="proName" type="text" style="width:260px;" fieldonly='1' name="accountname"
+                                               tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                                id="proName"/>
+                                                >
                                     </td>
-
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         项目进度编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" style="float:left;width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
                                     </td>
-
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         项目计划
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
-                                               tabindex="" class="detailedViewTextBox"
-                                               onfocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"
-                                                id="account_name_check"/>
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no"
+                                               id="account_no221"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
-
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         项目工时
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no1"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
-
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         项目费用
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no11"
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no11"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>负责人
+                                        负责人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <select>
-                                            <option value ="1">&nbsp;请选择&nbsp;&nbsp;</option>
-                                            <option value ="2">李四</option>
-                                            <option value="3">王五</option>
-                                            <option value="4">张三</option>
-                                        </select>
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no21"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
-                                    </tr>
+                                </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        起始日期
+                                        起始时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-start" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-collet" type="text" onfocus="WdatePicker()"
+                                               readonly/>
                                     </td>
-
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        截止日期
+                                        截止时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-end" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="date-collet1" type="text" onfocus="WdatePicker()"
+                                               readonly/>
                                     </td>
                                 </tr>
                             </table>
                         </div>
-
-
-                        <div class="col-md-12">
-                            <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
-                                <thead>
-                                <td colspan=4 class="editrelhead">
-                                    <b>备注信息</b>
-                                </td>
-                                </thead>
-                            </table>
-                            <tr>
-                                <td width="20%" class="DetailedTd1Label" align="right">
-                                    <i style="color: red">*</i>备注
-                                </td>
-                                <td width="30%" align="left" class="DetailedTd2Info">
-
-                                    <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
-                                           tabindex="" class="detailedViewTextBox"
-                                           onfocus="this.className='detailedViewTextBoxOn'"
-                                           onBlur="this.className='detailedViewTextBox'"
-                                           id="proName1"/>
-                                </td>
-                            </tr>
-                        </div>
-                    </div>
                     </div>
                 </div>
-
-
+                <div class="projectscheduleforminput">
+                    <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
+                        <thead>
+                        <td colspan=4 class="editrelhead">
+                            <b>备注信息</b>
+                        </td>
+                        </thead>
+                        <tr>
+                            <td width="20%" class="DetailedTd1Label" align="right">
+                                备注
+                            </td>
+                            <td width="80%" align="left" class="DetailedTd2Info">
+                                <input type="text" style="width:850px;" fieldonly='1' name="accountname"
+                                       tabindex="" value=""
+                                       tabindex="" class="detailedViewTextBox"
+                                       onfocus="this.className='detailedViewTextBoxOn'"
+                                       onBlur="this.className='detailedViewTextBox'"
+                                       id="contactPersonName1"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="projectscheduleBtn">
+                        <button class="btn btn-success save">保存</button>
+                        <button class="btn btn-danger cancel">取消</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script>
-        var $table = $('#table');
+</div>
+</div>
+</div>
+<script>
+    var $table = $('#table');
 
-        $(function () {
-            var data = [
-                {
-                    "proId": 0,
-                    "proName": "Item 0",
-                    "pTName": "$0"
-                },
-                {
-                    "proId": 1,
-                    "proName": "Item 1",
-                    "pTName": "$1"
-                },
-                {
-                    "proId": 2,
-                    "proName": "Item 2",
-                    "pTName": "$2"
-                },
-                {
-                    "proId": 3,
-                    "proName": "Item 3",
-                    "pTName": "$3"
-                },
-                {
-                    "proId": 4,
-                    "proName": "Item 4",
-                    "pTName": "$4"
-                },
-                {
-                    "proId": 5,
-                    "proName": "Item 5",
-                    "pTName": "$5"
-                }
-            ];
-            $table.bootstrapTable({data: data});
-        });
+    $(function () {
+        var data = [];
+        $table.bootstrapTable({data: data});
+    });
 
-
-    </script>
+    var LocString = String(window.document.location.href);
+    function getQueryStr(str) {
+        var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) {
+            return tmp[2];
+        }
+// parameter cannot be found
+        return "";
+    }
+    document.getElementById("proName").value = getQueryStr("proName");
+</script>
 </body>
 </html>

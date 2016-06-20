@@ -4,7 +4,55 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
 <body>
+<div class="path">
+    <div class="row">
+        <div class="col-md-12">
+            <p>相关信息 >> <i>回款计划</i></p>
+        </div>
+    </div>
+</div>
+<div class="userDetailBtn">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success return" onclick="window.history.back();">
+                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+            </button>
+        </div>
+    </div>
+</div>
+<div>
+    <table id="table">
+        <thead>
+        <tr>
+            <th data-field="proId">回款计划编号</th>
+            <th data-field="proName">期次</th>
+            <th data-field="pTName">状态</th>
+            <th data-field="proMoney">金额</th>
+            <th data-field="proBrokerage">已收金额</th>
+            <th data-field="cusId">操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<script>
+    var $table = $('#table');
 
+    $(function () {
+        var data = [
+        ];
+        $table.bootstrapTable({data: data});
+    });
+
+
+</script>
 </body>
-</html>

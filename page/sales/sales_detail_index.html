@@ -19,7 +19,7 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#invoiceId').text(obj.name);
+            $('#invoiceNumber').text(obj.name);
             $('.title').text(obj.name);
         });
     });

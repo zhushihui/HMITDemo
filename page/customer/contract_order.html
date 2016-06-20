@@ -12,13 +12,49 @@
 <script src="../../js/bootstrap-table.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
 <body>
     <div class="path">
         <div class="row">
             <div class="col-md-12">
-                <p>相关信息 >> <i>合同订单</i></p>
+            <p>相关信息 >> <i>合同订单</i></p>
             </div>
         </div>
     </div>
+    <div class="userDetailBtn">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-success return" onclick="window.history.back();">
+                    <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+                </button>
+            </div>
+        </div>
+    </div>
+                            <div>
+                                <table id="table">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="proId">编号</th>
+                                        <th data-field="proName">订单名称</th>
+                                        <th data-field="pTName">签约日期</th>
+                                        <th data-field="proMoney">负责人</th>
+                                        <th data-field="proBrokerage">审批状态</th>
+                                        <th data-field="cusId">产品名称</th>
+                                        <th data-field="cz">操作</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+        ];
+        $table.bootstrapTable({data: data});
+    });
+
+
+</script>
 </body>
 </html>
