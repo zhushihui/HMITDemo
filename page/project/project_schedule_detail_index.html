@@ -15,7 +15,7 @@
 <body>
 <script>
     $(function () {
-        $('.projectform').load('project_form.html', function () {
+        $('.projectscheduleform').load('projectschedule_form.html', function () {
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
@@ -24,10 +24,10 @@
         });
     });
 </script>
-<div class="project">
+<div class="projectschedule">
     <div class="row">
         <div class="col-md-2">
-            <div class="projectmenu">
+            <div class="projectschedulemenu">
                 <div class="title">
                     新增 项目进度
                 </div>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-md-10">
-            <div class="projectform">
+            <div class="projectscheduleform">
             </div>
         </div>
     </div>

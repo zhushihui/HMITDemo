@@ -19,26 +19,10 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#supName').text(obj.name);
+            $('#purchaseNumber').text(obj.name);
             $('.title').text(obj.name);
         });
     });
-    function purchaseinvoice() {
-
-        $('.purchaseform').load('#');
-
-
-    }
-
-    function paymentplan() {
-
-        $('.purchaseform').load('#');
-    }
-
-    function paymentorder() {
-
-        $('.purchaseform').load('#');
-    }
 </script>
 <div class="purchase">
     <div class="row">
@@ -49,13 +33,6 @@
                 </div>
                 <div class="info">
                     相关信息
-                </div>
-                <div class="menulist">
-                    <ul>
-                        <li><a href="javascript:void(0);" onclick="purchaseinvoice();">采购发票</a></li>
-                        <li><a href="javascript:void(0);" onclick="paymentplan();">付款计划</a></li>
-                        <li><a href="javascript:void(0);" onclick="paymentorder();">付款单</a></li>
-                    </ul>
                 </div>
             </div>
         </div>

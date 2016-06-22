@@ -19,12 +19,9 @@
             <button class="btn btn-success return" onclick="window.history.back();">
                 <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
             </button>
-            <button class="btn btn-danger new">
+            <a type="submit" class="btn btn-danger new" href="../purchase/new_purchaseorder.html">
                 <i class="glyphicon glyphicon-plus"></i>新建
-            </button>
-            <button class="btn btn-warning copy">
-                <i class="glyphicon glyphicon-copyright-mark"></i>复制
-            </button>
+            </a>
         </div>
     </div>
 </div>
@@ -42,7 +39,7 @@
                     <td width="20%" class="DetailedTd1Label" align="right">
                         <i style="color: red">*</i>采购订单编号
                     </td>
-                    <td id="proName" width="30%" align="left" class="DetailedTd2Info">
+                    <td id="purchaseNumber" width="30%" align="left" class="DetailedTd2Info">
                     </td>
                     <td width="20%" class="DetailedTd1Label" align="right">
                         项目名称
@@ -89,7 +86,6 @@
                     <td id="signDate" width="30%" align="left" class="DetailedTd2Info">
                     </td>
                 </tr>
-
                 </tr>
             </table>
         </div>
