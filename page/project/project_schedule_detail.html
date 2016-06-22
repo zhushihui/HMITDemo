@@ -27,7 +27,7 @@
             <button class="btn btn-success return" onclick="window.history.back();">
                 <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
             </button>
-            <button class="btn btn-danger new" onclick="window.location.reload(url)">
+            <button class="btn btn-danger new" onclick="newProjectschedule();">
                 <i class="glyphicon glyphicon-plus"></i>新建
             </button>
         </div>
@@ -55,15 +55,15 @@
         var data = [
         ];
         $table.bootstrapTable({data: data});
-    });
-
-    $(function() {
         var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
         row = decodeURI(row,"UTF-8");
         var obj =JSON.parse(row);
-        url = '../project/new_project_schedule.html?customerName=' + obj.name;
+        url = '../project/new_project_schedule.html?proName=' + obj.name;
     });
 
+    function newProjectschedule(){
+        window.location.href = url ;
+    }
 
 </script>
 </body>

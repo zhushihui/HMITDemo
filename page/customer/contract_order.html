@@ -27,6 +27,9 @@
                 <button class="btn btn-success return" onclick="window.history.back();">
                     <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
                 </button>
+                <button class="btn btn-danger new" onclick="newContact()">
+                    <i class="glyphicon glyphicon-plus"></i>新建
+                </button>
             </div>
         </div>
     </div>
@@ -37,9 +40,10 @@
                                         <th data-field="proId">编号</th>
                                         <th data-field="proName">订单名称</th>
                                         <th data-field="pTName">签约日期</th>
-                                        <th data-field="proMoney">负责人</th>
+                                        <th data-field="proMoney">销售负责人</th>
                                         <th data-field="proBrokerage">审批状态</th>
                                         <th data-field="cusId">产品名称</th>
+                                        <th data-field="csId">未出库数量</th>
                                         <th data-field="cz">操作</th>
                                     </tr>
                                     </thead>
@@ -52,7 +56,15 @@
         var data = [
         ];
         $table.bootstrapTable({data: data});
+        var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+        row = decodeURI(row,"UTF-8");
+        var obj =JSON.parse(row);
+        url = '../contactorder/new_contactorder.html?orderName=' + obj.name;
     });
+
+    function newContact(){
+        window.location.href = url ;
+    }
 
 
 </script>

@@ -11,7 +11,6 @@
     <script src="../js/bootstrap-table.js"></script>
     <script src="../js/export/bootstrap-table-export.js"></script>
     <script src="../js/export/tableExport.js"></script>
-    <script src="../js/global.js"></script>
 </head>
 <body>
 
@@ -45,10 +44,13 @@
         $('.ifr').attr('src','../page/purchase/index.html');
     }
     function shouye() {
-        $('.ifr').attr('src','../page/index.html');
+        $('.ifr').attr('src','../page/welcome.html');
     }
     function kehu() {
         $('.ifr').attr('src','../page/customer/index.html');
+    }
+    function hetongdingdan(){
+        $('.ifr').attr('src','../page/contactorder/index.html');
     }
 
 </script>
@@ -100,6 +102,13 @@
                     <li><a href="javascript:void(0);" onclick="gongyingshang();">供应商</a> </li>
 
                     <li><a href="javascript:void(0);" onclick="caigoudingdan();">采购订单</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-expanded="false">销售<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="javascript:void(0);" onclick="hetongdingdan();">合同订单</a> </li>
                 </ul>
             </li>
             <li>

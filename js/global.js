@@ -2,9 +2,9 @@
  * Created by LiuMing on 2016/5/18.
  */
 $(function () {
-/*    $('.toggle').click(function () {
-        $('.nav-list').toggleClass('active');
-    });*/
+    /*    $('.toggle').click(function () {
+     $('.nav-list').toggleClass('active');
+     });*/
 
     $(document).on('click', '#navbar li a, .nav-list li a, .navigation a', function (e) {
         var href = $(this).attr('href');

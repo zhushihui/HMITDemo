@@ -19,6 +19,9 @@
             <button class="btn btn-success return" onclick="window.history.back();">
                 <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
             </button>
+            <a type="submit" class="btn btn-danger new" href="../customer/new_user.html">
+                <i class="glyphicon glyphicon-plus"></i>新建
+            </a>
         </div>
     </div>
 </div>
@@ -91,12 +94,10 @@
                                 备注
                             </td>
                             <td width="80%" align="left" class="DetailedTd2Info">
-                                <input type="text" style="width:850px;" fieldonly='1' name="accountname"
-                                       tabindex="" value=""
-                                       tabindex="" class="detailedViewTextBox"
-                                       onfocus="this.className='detailedViewTextBoxOn'"
-                                       onBlur="this.className='detailedViewTextBox'"
-                                       id="contactPersonName1"/>
+                                <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
+                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          style="height:50px"></textarea>
                             </td>
                         </tr>
                     </table>

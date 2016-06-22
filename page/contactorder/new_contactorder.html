@@ -13,13 +13,14 @@
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
+
 <body>
-<div class="projectschedule">
+<div class="contactorder">
     <div class="row">
         <div class="col-md-2">
-            <div class="projectschedulemenu">
+            <div class="contactordermenu">
                 <div class="title">
-                    新增 项目进度
+                    新增 合同订单
                 </div>
                 <div class="info">
                     相关信息
@@ -27,8 +28,8 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="projectscheduleform">
-                <div class="projectscheduleforminput">
+            <div class="contactorderform">
+                <div class="contactorderforminput">
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
@@ -39,18 +40,18 @@
                                 </thead>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        <i style="color: red">*</i>项目名称
+                                        <i style="color: red">*</i>订单名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="proName" type="text" style="width:260px;" fieldonly='1' name="accountname"
+                                        <input type="text" style="width:260px;" fieldonly='1' name="accountname"
                                                tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                                >
+                                               id="orderName"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        项目进度编号
+                                        订单状态
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="float:left;width:260px;" fieldonly='1' tabindex=""
@@ -62,7 +63,7 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        项目计划
+                                        客户名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
@@ -73,7 +74,7 @@
                                                onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        项目工时
+                                        编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
@@ -85,7 +86,7 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        项目费用
+                                        联系人姓名
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
@@ -95,7 +96,7 @@
                                                onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        负责人
+                                        销售负责人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
@@ -107,17 +108,21 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        起始时间
+                                        代理人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-collet" type="text" onfocus="WdatePicker()"
-                                               readonly/>
+                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
+                                               name="account_no" id="account_no2"
+                                               class=detailedViewTextBox
+                                               onFocus="this.className='detailedViewTextBoxOn'"
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        截止时间
+                                        交付日期
                                     </td>
+
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-collet1" type="text" onfocus="WdatePicker()"
+                                        <input class="Wdate" id="date-execution1" type="text" onfocus="WdatePicker()"
                                                readonly/>
                                     </td>
                                 </tr>
@@ -125,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="projectscheduleforminput">
+                <div class="contactorderforminput">
                     <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                         <thead>
                         <td colspan=4 class="editrelhead">
@@ -144,7 +149,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div class="projectscheduleBtn">
+                    <div class="contactorderBtn">
                         <button class="btn btn-success save">保存</button>
                         <button class="btn btn-danger cancel">取消</button>
                     </div>
@@ -172,7 +177,7 @@
 // parameter cannot be found
         return "";
     }
-    document.getElementById("proName").value = getQueryStr("proName");
+    document.getElementById("orderName").value = getQueryStr("orderName");
 </script>
 </body>
 </html>

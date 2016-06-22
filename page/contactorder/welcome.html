@@ -17,13 +17,9 @@
 <body>
 <div style="width: 100%; margin-top: 50px;">
     <div id="toolbar">
-        <a id="NewUserBtn" type="submit" class="btn btn-success" href="new_user.html">
+        <a id="NewUserBtn" type="submit" class="btn btn-success" href="new_contactorder.html">
             <i class="glyphicon glyphicon-plus"></i>
-            新增客户
-        </a>
-        <a id="ExportBtn" type="submit" class="btn btn-warning">
-            <i class="glyphicon glyphicon-import"></i>
-            导入客户
+            新增合同订单
         </a>
     </div>
     <div class="row">
@@ -40,22 +36,22 @@
                    data-toolbar="#toolbar"
                    data-show-export="true"
                     >
-
                 <thead>
                 <tr>
-                    <th data-field="id">客户编号</th>
-                    <th data-field="name"data-formatter="customernameformat">客户名称</th>
-                    <th data-field="totalMoney">总应收账款</th>
-                    <th data-field="address">地点</th>
-                    <th data-field="contact">联系方式</th>
-                    <th data-field="empId">负责人</th>
+                    <th data-field="id">编号</th>
+                    <th data-field="name"data-formatter="contactordernameformat">订单名称</th>
+                    <th data-field="totalMoney">客户名称</th>
+                    <th data-field="address">签约日期</th>
+                    <th data-field="contact">销售负责人</th>
+                    <th data-field="empId">审批状态</th>
+                    <th data-field="a">产品名称</th>
+                    <th data-field="b">未出库数量</th>
+                    <th data-field="c">操作</th>
                 </tr>
                 </thead>
             </table>
-
         </div>
     </div>
-
 </div>
 
 <script>
@@ -140,9 +136,9 @@
         ];
         $table.bootstrapTable({data: data});
     });
-function customernameformat(value, row, index) {
+function contactordernameformat(value, row, index) {
     var data = encodeURI(JSON.stringify(row),"UTF-8");
-    return "<a href='customer_detail_index.html?data="+data+"'>"+value+"</a>";
+    return "<a href='contactorder_detail_index.html?data="+data+"'>"+value+"</a>";
 }
 
 </script>

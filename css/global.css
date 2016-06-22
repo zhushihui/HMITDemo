@@ -369,6 +369,9 @@ a:focus,a:active,textarea,input{outline:none;}
 .supplierform .supplierforminput .table {
     margin-bottom: 0;
 }
+.contactorderform .contactorderforminput .table {
+    margin-bottom: 0;
+}
 
 
 
@@ -1175,6 +1178,95 @@ a:focus,a:active,textarea,input{outline:none;}
 }
 
 .projectscheduleform .projectscheduleDetailBtn button i {
+    padding-right: 5px;
+
+}
+
+.contactorderheader {
+    margin-top: 50px;
+    height: 20px;
+    width: auto;
+    background-color: grey;
+}
+.contactorder {
+    width: auto;
+    margin-top: 80px;
+
+}
+.contactorder .contactordermenu
+{
+    border: 1px solid grey;
+    height: 300px;
+    width: auto;
+
+}
+.contactorder .contactorderform {
+    border: 1px solid grey;
+    width: auto;
+
+
+}
+.contactorder .contactordermenu .title {
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    line-height: 10px;
+    border-bottom: 1px solid grey;
+    padding: 12px 10px;
+}
+
+.contactorder .contactordermenu .info  {
+    background-color: #e1edf7;
+    vertical-align: middle;
+    height: 25px;
+    text-align: center;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+.contactorderform .contactorderBtn {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.contactorderform .contactorderBtn .save {
+    width: 80px;
+    margin-right: 10px;
+}
+.contactorderform .contactorderBtn .cancel {
+    width: 80px;
+
+}
+.contactorderforminput .row .col-md-12 {
+    margin: 0;
+    padding: 0;
+
+}
+.contactorderforminput .table tr td {
+    border: 1px solid grey;
+}
+.contactorderform .contactorderDetailBtn {
+
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    height: 45px;
+    line-height: 10px;
+
+
+}
+.contactorderform .contactorderDetailBtn button {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.contactorderform .contactorderDetailBtn button i {
     padding-right: 5px;
 
 }

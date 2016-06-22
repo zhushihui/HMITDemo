@@ -27,7 +27,7 @@
             <button class="btn btn-success return" onclick="window.history.back();">
                 <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
             </button>
-            <button class="btn btn-danger new" onclick="window.location.reload(url)">
+            <button class="btn btn-danger new" onclick="newSales()">
                 <i class="glyphicon glyphicon-plus"></i>新建
             </button>
         </div>
@@ -36,7 +36,6 @@
 <div>
     <table id="table">
         <thead>
-
         <tr>
             <th data-field="projectName">发票编号</th>
             <th data-field="proName">主题</th>
@@ -46,25 +45,25 @@
             <th data-field="cusId">负责人</th>
             <th data-field="cz">源单</th>
             <th data-field="projectManager">操作</th>
-
         </thead>
     </table>
 </div>
 <script>
     var $table = $('#table');
-
+    var url;
     $(function () {
         var data = [
         ];
         $table.bootstrapTable({data: data});
-    });
-
-    $(function() {
         var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
         row = decodeURI(row,"UTF-8");
         var obj =JSON.parse(row);
         url = '../sales/new_sales.html?customerName=' + obj.name;
     });
+
+    function newSales(){
+        window.location.href = url ;
+    }
 
 
 </script>
