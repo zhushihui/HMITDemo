@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+<style type="text/css">@import "../../css/global.css";</style>
+<script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/export/bootstrap-table-export.js"></script>
+<script src="../../js/export/tableExport.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
 <body>
+<div class="path">
+    <div class="row">
+        <div class="col-md-12">
+            <p>相关信息 >> <i>采购信息</i></p>
+        </div>
+    </div>
+</div>
+<div class="projectDetailBtn">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success return" onclick="window.history.back();">
+                <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
+            </button>
+        </div>
+    </div>
+</div>
+<div>
+    <table id="table">
+        <thead>
+        <tr>
+            <th data-field="projectName">设备名称</th>
+            <th data-field="proName">品牌型号</th>
+            <th data-field="pTName">数量</th>
+            <th data-field="proMoney">销售单价</th>
+            <th data-field="proBrokerage">销售总价</th>
+            <th data-field="cusId">配置描述</th>
+            <th data-field="cz">批发</th>
+            <th data-field="projectManager">操作</th>
+        </thead>
+    </table>
+</div>
+<script>
+    var $table = $('#table');
 
+    $(function () {
+        var data = [
+        ];
+        $table.bootstrapTable({data: data});
+        var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
+        row = decodeURI(row,"UTF-8");
+        var obj =JSON.parse(row);
+        url = '../project/new_project_schedule.html?proName=' + obj.name;
+    });
+
+    function newProjectschedule(){
+        window.location.href = url ;
+    }
+
+</script>
 </body>
 </html>
