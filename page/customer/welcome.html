@@ -30,25 +30,29 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
                    data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
+                   data-url="../../../HMITCRM/getAllCustomer"
                    data-show-export="true"
                     >
 
                 <thead>
                 <tr>
-                    <th data-field="id">客户编号</th>
-                    <th data-field="name"data-formatter="customernameformat">客户名称</th>
+                    <th data-field="cusId">客户编号</th>
+                    <th data-field="cusName"data-formatter="customernameformat">客户名称</th>
                     <th data-field="totalMoney">总应收账款</th>
                     <th data-field="address">地点</th>
                     <th data-field="contact">联系方式</th>
-                    <th data-field="empId">负责人</th>
+                    <th data-field="empName">负责人</th>
                 </tr>
                 </thead>
             </table>
@@ -59,91 +63,19 @@
 </div>
 
 <script>
-    var $table = $('#table');
 
-    $(function () {
-        var data = [
-            {
-                "id": 0,
-                "name": "Item0",
-                "totalMoney": "$0"
-            },
-            {
-                "id": 1,
-                "name": "Item1",
-                "totalMoney": "$1"
-            },
-            {
-                "id": 2,
-                "name": "Item2",
-                "totalMoney": "$2"
-            },
-            {
-                "id": 3,
-                "name": "Item3",
-                "totalMoney": "$3"
-            },
-            {
-                "id": 4,
-                "name": "Item4",
-                "totalMoney": "$4"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            },
-            {
-                "id": 5,
-                "name": "Item5",
-                "totalMoney": "$5"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
-function customernameformat(value, row, index) {
-    var data = encodeURI(JSON.stringify(row),"UTF-8");
-    return "<a href='customer_detail_index.html?data="+data+"'>"+value+"</a>";
-}
+    function responseHandler(res) {
+        console.info(res);
+        return {
+            "rows": res.rows,
+            "total": res.total
+        }
+    }
+
+    function customernameformat(value, row, index) {
+        var data = encodeURI(JSON.stringify(row),"UTF-8");
+        return "<a href='customer_detail_index.html?data="+data+"'>"+value+"</a>";
+    }
 
 </script>
 </body>

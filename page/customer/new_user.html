@@ -6,10 +6,12 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <body>
@@ -40,6 +42,7 @@
                 <div class="userforminput">
                     <div class="row">
                         <div class="col-md-12">
+                            <form id="userForm" >
                             <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
                                 <td colspan=4 class="editrelhead">
@@ -51,19 +54,19 @@
                                         <i style="color: red">*</i>客户编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" style="width:260px;" fieldonly='1' name="accountname"
+                                        <input type="text" style="width:260px;" fieldonly='1' name="cusId"
                                                tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               id="contactPersonName"/>
+                                               id="cusId"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         <i style="color: red">*</i>客户名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="float:left;width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no"
+                                               name="cusName" id="cusName"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -78,8 +81,8 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no"
-                                               id="account_no221"
+                                               name="totalMoney"
+                                               id="totalMoney"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -89,7 +92,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no1"
+                                               name="address" id="address"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -101,7 +104,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no11"
+                                               name="contactPerson" id="contactPerson"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -111,7 +114,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no21"
+                                               name="contact" id="contact"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -122,14 +125,17 @@
                                         负责人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no2"
-                                               class=detailedViewTextBox
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"/>
+                                        <div  style="width: 57%;height: 30px; float: left;">
+                                            <select id="empId" name="empId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                <optgroup id="empNameList" label="负责人" >
+
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -153,7 +159,7 @@
                         </tr>
                     </table>
                     <div class="userBtn">
-                        <button class="btn btn-success save">保存</button>
+                        <button class="btn btn-success save" onclick="saveCustomer();">保存</button>
                         <button class="btn btn-danger cancel">取消</button>
                     </div>
                 </div>
@@ -163,5 +169,85 @@
 </div>
 </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+
+        //负责人下拉框
+        $.ajax({
+            url: "../../../HMITCRM//getProBrokeragList",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                for (var i = 0; i<data.length; i++){
+                    $('#empNameList').append("<option value=" + data[i].empId + ">" + data[i].empName + "</option>");
+                    $('.selectpicker').selectpicker('val', '');
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            }
+        })
+
+    });
+
+
+    var sy = $.extend({}, sy);
+    sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+        var o = {};
+        $.each(form.serializeArray(), function (index) {
+            if (o[this['name']]) {
+                o[this['name']] = o[this['name']] + "," + this['value'];
+            } else {
+                o[this['name']] = this['value'];
+            }
+        });
+        return o;
+    };
+    var url;
+    var type;
+    function saveCustomer(){
+        var data1 = sy.serializeObject($('#userForm'));
+        data1.empName =$('#empNameList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addCustomer';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                var o =  eval("("+result+")");
+                if (o.result=="success"){
+                    alert(o.msg);
+                    location.href='customer_detail_index.html?data='+data;
+                }
+                else {
+                    alert(o.msg);
+                }
+            },
+            error : function(){}
+        })
+    }
+
+    function checkName(){
+        var data = document.getElementById("account_name_check").value;
+        url = '../../../HMITCRM/checkAccountName';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(data){
+                if (data){
+                    alert("用户名已存在");
+                }
+                else {
+                    alert("用户名可用");
+                }
+            },
+            error : function(){}
+        })
+    }
+
+</script>
 </body>
 </html>
