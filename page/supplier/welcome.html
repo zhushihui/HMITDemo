@@ -24,13 +24,18 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
+                   data-url="../../../HMITCRM/getAllSupplier"
                    data-show-export="true">
 
                 <thead>
@@ -39,7 +44,7 @@
                     <th data-field="contactPersonName">主要联系人</th>
                     <th data-field="contact">联系电话</th>
                     <th data-field="address">地址</th>
-                    <th data-field="empId">业务代表</th>
+                    <th data-field="empName">业务代表</th>
                     <th data-field="totalPaymentAmount">应付款</th>
                 </tr>
                 </thead>
@@ -51,87 +56,13 @@
 </div>
 
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 1,
-                "contactPersonName": "Item1",
-                "contact": "$1"
-            },
-            {
-                "supName": 2,
-                "contactPersonName": "Item2",
-                "contact": "$2"
-            },
-            {
-                "supName": 3,
-                "contactPersonName": "Item3",
-                "contact": "$3"
-            },
-            {
-                "supName": 4,
-                "contactPersonName": "Item4",
-                "contact": "$4"
-            },
-            {
-                "supName": 5,
-                "contactPersonName": "Item5",
-                "contact": "$5"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "supName": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
+    function responseHandler(res) {
+        console.info(res);
+        return {
+            "rows": res.rows,
+            "total": res.total
+        }
+    }
     function suppliernameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='supplier_detail_index.html?data="+data+"'>"+value+"</a>";

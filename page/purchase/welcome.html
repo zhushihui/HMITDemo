@@ -10,6 +10,7 @@
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/mergeRowsCell.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 
@@ -24,24 +25,31 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
+                   data-url="../../../HMITCRM/getAllPurchaseOrder"
                    data-show-export="true">
 
                 <thead>
                 <tr>
-                    <th data-field="id" data-formatter="purchasenameformat">采购订单编号</th>
-                    <th data-field="contactPersonName">项目名称</th>
-                    <th data-field="contact">项目开始日期</th>
-                    <th data-field="address">合计</th>
-                    <th data-field="empId">经理</th>
-                    <th data-field="totalPaymentAmounta">采购状态</th>
-                    <th data-field="totalPaymentAmountb">预计到货时间</th>
+                    <th data-field="ordId" data-formatter="purchasenameformat">采购订单编号</th>
+                    <th data-field="proName">项目名称</th>
+                    <th data-field="equName">设备名称</th>
+                    <th data-field="supName">供应商</th>
+                    <th data-field="sellTotalPrice">合计</th>
+                    <th data-field="beginDate">项目开始日期</th>
+                    <th data-field="proBrokerage">经理</th>
+                    <th data-field="status">采购状态</th>
+                    <th data-field="expecteAT">预计到货时间</th>
                     <th data-field="totalPaymentAmountc">到货确认</th>
                 </tr>
                 </thead>
@@ -53,86 +61,37 @@
 </div>
 
 <script>
-    var $table = $('#table');
 
+    var $table = $('#table');
     $(function () {
-        var data = [
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 1,
-                "contactPersonName": "Item1",
-                "contact": "$1"
-            },
-            {
-                "id": 2,
-                "contactPersonName": "Item2",
-                "contact": "$2"
-            },
-            {
-                "id": 3,
-                "contactPersonName": "Item3",
-                "contact": "$3"
-            },
-            {
-                "id": 4,
-                "contactPersonName": "Item4",
-                "contact": "$4"
-            },
-            {
-                "id": 5,
-                "contactPersonName": "Item5",
-                "contact": "$5"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            },
-            {
-                "id": 0,
-                "contactPersonName": "Item0",
-                "contact": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
+        $table.on('load-success.bs.table column-switch.bs.table page-change.bs.table search.bs.table', function () {
+            // $table.bootstrapTable('mergeCells', {...});
+            var demo = new mergeRowsCell('table');
+            //demo.merge(0,0);
+            demo.merge(0,1);
+//            var tab = document.getElementById("table");
+//            var proName, count, start;
+//
+//            proName = "";
+//            count = 1;
+//            for(var i=0; i<tab.rows.length; i++){
+//                if(proName == tab.rows[i].cells[1].innerHTML){
+//                    count++;
+//                }else{
+//                    if(count > 1){ //合并
+//                        start = i - count;
+//                        tab.rows[start].cells[1].rowSpan = count;
+//                        for(var j=start+1; j<i; j++){
+//                            for(var k=0; k<1; k++){
+//                                tab.rows[j].removeChild(tab.rows[j].cells[1]);
+//                            }
+//                        }
+//                        count = 1;
+//                    }
+//                    proName = tab.rows[i].cells[1].innerHTML;
+//                }
+//            }
+        });
     });
     function purchasenameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");

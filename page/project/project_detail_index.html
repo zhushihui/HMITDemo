@@ -19,8 +19,17 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#proName').text(obj.name);
-            $('.title').text(obj.name);
+            $('#proName').text(obj.proName);
+            $('#proId').text(obj.proId);
+            $('#pTName').text(obj.pTName);
+            $('#proMoney').text(obj.proMoney);
+            $('#empName').text(obj.proBrokerage);
+            $('#cusId').text(obj.cusName);
+            $('#conId').text(obj.conId);
+            $('#signDate').text(obj.signDate);
+            $('#beginDate').text(obj.beginDate);
+            $('#status').text(obj.status);
+            $('.title').text(obj.proName);
         });
     });
 

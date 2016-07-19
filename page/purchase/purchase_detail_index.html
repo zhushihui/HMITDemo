@@ -19,8 +19,15 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#purchaseNumber').text(obj.name);
-            $('.title').text(obj.name);
+            $('#ordId').text(obj.ordId);
+            $('#proId').text(obj.proName);
+            $('#beginDate').text(obj.beginDate);
+            $('#proMoney').text(obj.sellTotalPrice);
+            $('#proBrokerage').text(obj.proBrokerage);
+            $('#status').text(obj.status);
+            $('#expecteAT').text(obj.expecteAT);
+            $('#action').text(obj.action);
+            $('.title').text(obj.ordId);
         });
     });
 </script>

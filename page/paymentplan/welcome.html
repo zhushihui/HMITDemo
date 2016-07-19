@@ -15,28 +15,45 @@
 
 <body>
 <div style="width: 100%; margin-top: 50px;">
+    <div id="toolbar">
+        <a id="newpayment" type="submit" class="btn btn-success" href="new_paymentplan.html">
+            <i class="glyphicon glyphicon-plus"></i>新增付款计划
+        </a>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
-                   data-show-export="true">
+                   data-url="../../../HMITCRM/getAllPaymentPlan"
+                   data-show-export="true"
+                    >
 
                 <thead>
                 <tr>
-                    <th data-field="paymentplanId" data-formatter="paymentplannameformat">付款计划编号</th>
-                    <th data-field="periods">期次</th>
+                    <th data-field="paymentPlanId" data-formatter="paymentplannameformat">付款计划编号</th>
+                    <th data-field="periodTime">期次</th>
                     <th data-field="status">状态</th>
-                    <th data-field="money">金额</th>
-                    <th data-field="paymentDate">计划付款日期</th>
-                    <th data-field="purchaseOrder">采购订单</th>
+                    <th data-field="amount">金额</th>
+                    <th data-field="supName">供应商</th>
+                    <th data-field="equDescription">品牌型号</th>
+                    <th data-field="equNumber">数量</th>
+                    <th data-field="sellPrice">销售单价</th>
+                    <th data-field="ordId">采购订单</th>
+                    <th data-field="paymentPlanDate">计划付款日期</th>
+                    <th data-field="actualPaymentDate">实际付款日期</th>
                     <th data-field="leader">负责人</th>
+                    <th data-field="notes">备注</th>
                 </tr>
                 </thead>
             </table>
@@ -47,88 +64,6 @@
 </div>
 
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 1,
-                "periods": "Item1",
-                "status": "$1"
-            },
-            {
-                "paymentplanId": 2,
-                "periods": "Item2",
-                "status": "$2"
-            },
-            {
-                "paymentplanId": 3,
-                "periods": "Item3",
-                "status": "$3"
-            },
-            {
-                "paymentplanId": 4,
-                "periods": "Item4",
-                "status": "$4"
-            },
-            {
-                "paymentplanId": 5,
-                "periods": "Item5",
-                "status": "$5"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item 0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            },
-            {
-                "paymentplanId": 0,
-                "periods": "Item0",
-                "status": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
     function paymentplannameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='paymentplan_detail_index.html?data="+data+"'>"+value+"</a>";

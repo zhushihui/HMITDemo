@@ -17,7 +17,7 @@
 <div class="path">
     <div class="row">
         <div class="col-md-12">
-            <p>相关信息 >> <i>收款单</i></p>
+            <p>相关信息 >> <i>付款计划</i></p>
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
             <button class="btn btn-success return" onclick="window.history.back();">
                 <i class="glyphicon glyphicon-arrow-left"></i> 返回列表
             </button>
-            <button class="btn btn-danger new" onclick="newPaymentorder();">
+            <button class="btn btn-danger new" onclick="newPaymentPlan()">
                 <i class="glyphicon glyphicon-plus"></i>新建
             </button>
         </div>
@@ -37,25 +37,39 @@
     <table id="table">
         <thead>
         <tr>
-            <th data-field="receiptId">收款单编号</th>
-            <th data-field="payment">收款方式</th>
-            <th data-field="total">合计</th>
-            <th data-field="collectionDate">收款日期</th>
+            <th data-field="paymentPlanId" data-formatter="paymentplannameformat">付款计划编号</th>
+            <th data-field="periodTime">期次</th>
+            <th data-field="status">状态</th>
+            <th data-field="amount">金额</th>
+            <th data-field="supName">供应商</th>
+            <th data-field="equDescription">品牌型号</th>
+            <th data-field="equNumber">数量</th>
+            <th data-field="sellPrice">销售单价</th>
+            <th data-field="ordId">采购订单</th>
+            <th data-field="paymentPlanDate">计划付款日期</th>
+            <th data-field="actualPaymentDate">实际付款日期</th>
             <th data-field="leader">负责人</th>
-            <th data-field="auditStatus">审核状态</th>
+            <th data-field="notes">备注</th>
             <th data-field="cz" data-formatter="actionFormat">操作</th>
         </tr>
         </thead>
     </table>
 </div>
 <script>
-    function actionFormat(value,row,index) {
-        return '<a onclick="auditReceipt('+row.receiptId+')">审核</a>' +'&nbsp&nbsp'+
-                '<a onclick="deleteReceipt('+row.receiptId+')">删除</a>';
+
+    function paymentplannameformat(value, row, index) {
+        var data = encodeURI(JSON.stringify(row),"UTF-8");
+        return "<a href='../paymentplan/paymentplan_detail_index.html?data="+data+"'>"+value+"</a>";
     }
-    function auditReceipt(){
+
+    function actionFormat(value, row, index) {
+        return '<a onclick="auditPaymentPlan('+row.contId+')">审核</a>' +'&nbsp&nbsp'+
+                '<a onclick="deletePaymentPlan('+row.contId+')">删除</a>';
+    }
+    function auditPaymentPlan(){
         alert(1);
-    }function deleteReceipt(){
+    }
+    function deletePaymentPlan(){
         alert(2);
     }
     var $table = $('#table');
@@ -63,10 +77,10 @@
         var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
         row = decodeURI(row,"UTF-8");
         var obj =JSON.parse(row);
-        url = '../../../HMITCRM/getReceiptListByCusId';
+        url = '../../../HMITCRM/getPaymentPlanBySupId';
         $.ajax({
             url : url,
-            data : "data=" + obj.cusId,
+            data : "data=" + obj.supId,
             datatype :'json',
             type : 'post',
             success : function(data){
@@ -77,12 +91,14 @@
             },
             error : function(){}
         });
-        url = '../receipt/new_receipt.html?cusName=' + encodeURIComponent(obj.cusName) + '&cusId='+obj.cusId;
+        url = '../paymentplan/new_paymentplan.html?supName=' + encodeURIComponent(obj.supName) + '&supId='+obj.supId;
     });
 
-    function newPaymentorder(){
+    function newPaymentPlan(){
         window.location.href = url ;
     }
+
+
 </script>
 </body>
 </html>

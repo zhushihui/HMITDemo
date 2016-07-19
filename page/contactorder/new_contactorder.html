@@ -6,10 +6,12 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
@@ -29,6 +31,7 @@
         </div>
         <div class="col-md-10">
             <div class="contactorderform">
+                <form id="contractForm" method="post" class="form-horizontal">
                 <div class="contactorderforminput">
                     <div class="row">
                         <div class="col-md-12">
@@ -43,19 +46,20 @@
                                         <i style="color: red">*</i>订单名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" style="width:260px;" fieldonly='1' name="accountname"
-                                               tabindex="" value=""
-                                               tabindex="" class="detailedViewTextBox"
-                                               onfocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"
-                                               id="orderName"/>
+                                        <div  style="width: 70%;height: 30px; float: left;">
+                                            <select id="proId" name="proId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                <optgroup id="proIdList" label="订单" >
+
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         订单状态
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="float:left;width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no"
+                                               name="status" id="status"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -66,19 +70,20 @@
                                         客户名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no"
-                                               id="account_no221"
-                                               class=detailedViewTextBox
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"/>
+                                        <div  style="width: 70%;height: 30px; float: left;">
+                                            <select id="cusId" name="cusId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                <optgroup id="customerList" label="客户" >
+
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         编号
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no1"
+                                               name="id" id="id"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -90,7 +95,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no11"
+                                               name="contactPerson" id="contactPerson"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -100,7 +105,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no21"
+                                               name="saleResp" id="saleResp"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -112,7 +117,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
                                         <input type="text" style="width:260px;" fieldonly='1' tabindex=""
-                                               name="account_no" id="account_no2"
+                                               name="agent" id="agent"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"/>
@@ -122,7 +127,7 @@
                                     </td>
 
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-execution1" type="text" onfocus="WdatePicker()"
+                                        <input class="Wdate" id="deliverDate" name="deliverDate" type="text" onfocus="WdatePicker()"
                                                readonly/>
                                     </td>
                                 </tr>
@@ -143,41 +148,105 @@
                             </td>
                             <td width="80%" align="left" class="DetailedTd2Info">
                                 <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
-                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
-                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="notes"
+                                          id="notes" onBlur="this.className='detailedViewTextBox'" cols="90"
                                           style="height:50px"></textarea>
                             </td>
                         </tr>
                     </table>
                     <div class="contactorderBtn">
-                        <button class="btn btn-success save">保存</button>
+                        <button class="btn btn-success save" onclick="saveContractOrder();" type="button">保存</button>
                         <button class="btn btn-danger cancel">取消</button>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [];
-        $table.bootstrapTable({data: data});
-    });
-
     var LocString = String(window.document.location.href);
     function getQueryStr(str) {
         var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
         if (tmp = rs) {
             return tmp[2];
         }
-// parameter cannot be found
+        // parameter cannot be found
         return "";
     }
-    document.getElementById("orderName").value = getQueryStr("orderName");
+    var formCusId = getQueryStr("cusId");
+    var formCusName = decodeURIComponent(getQueryStr("cusName"));
+    if(formCusId!=""){
+        document.getElementById("cusId").removeAttribute("title");
+        $('#customerList').append("<option value=" + formCusId + ">" + formCusName + "</option>");
+    }else{
+        //客户下拉框
+        $.ajax({
+            url: "../../../HMITCRM/getCustomerList",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                for (var i = 0; i<data.length; i++){
+                    $('#customerList').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
+                    $('.selectpicker').selectpicker('val', '');
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            }
+        });
+    }
+
+    //项目名称下拉框
+    $.ajax({
+        url: "../../../HMITCRM/getProjectNameList",
+        dataType: "json",
+        success: function (data) {
+            JSON.stringify(data);
+            for (var i = 0; i<data.length; i++){
+                $('#proIdList').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
+                $('.selectpicker').selectpicker('val', '');
+                $('.selectpicker').selectpicker('refresh');
+            }
+        }
+    });
+
+    function saveContractOrder(){
+        var sy = $.extend({}, sy);
+        sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+            var o = {};
+            $.each(form.serializeArray(), function (index) {
+                if (o[this['name']]) {
+                    o[this['name']] = o[this['name']] + "," + this['value'];
+                } else {
+                    o[this['name']] = this['value'];
+                }
+            });
+            return o;
+        };
+        var url;
+        var data1 = sy.serializeObject($('#contractForm'));
+        data1.cusName =$('#customerList option:selected').text();
+        data1.proName = $('#proIdList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addContract';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                var o =  eval("("+result+")");
+                if (o.result=="success"){
+                    alert(o.msg);
+                    location.href='contactorder_detail_index.html?data='+data;
+                }
+                else {
+                    alert(o.msg);
+                }
+            },
+            error : function(){}
+        })
+    }
+
 </script>
 </body>
 </html>

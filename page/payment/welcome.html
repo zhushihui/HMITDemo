@@ -24,22 +24,33 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
-                   data-show-export="true">
+                   data-url="../../../HMITCRM/getAllPayment"
+                   data-show-export="true"
+                    >
 
                 <thead>
                 <tr>
                     <th data-field="paymentId" data-formatter="paymentnameformat">付款单编号</th>
                     <th data-field="payment">付款方式</th>
-                    <th data-field="total">合计</th>
-                    <th data-field="collectionDate">付款日期</th>
+                    <th data-field="totalAmount">合计</th>
+                    <th data-field="paymentDate">付款日期</th>
+                    <th data-field="supName">供应商</th>
+                    <th data-field="ordId">采购订单</th>
+                    <th data-field="paymentPlanId">计划付款单编号</th>
+                    <th data-field="paymentPlanDate">计划付款日期</th>
                     <th data-field="leader">负责人</th>
+                    <th data-field="notes">备注</th>
                 </tr>
                 </thead>
             </table>
@@ -50,87 +61,6 @@
 </div>
 
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 1,
-                "customerName": "Item1",
-                "payment": "$1"
-            },
-            {
-                "paymentId": 2,
-                "customerName": "Item2",
-                "payment": "$2"
-            },
-            {
-                "paymentId": 3,
-                "customerName": "Item3",
-                "payment": "$3"
-            },
-            {
-                "paymentId": 4,
-                "customerName": "Item4",
-                "payment": "$4"
-            },
-            {
-                "paymentId": 5,
-                "customerName": "Item5",
-                "payment": "$5"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "paymentId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
     function paymentnameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='payment_detail_index.html?data="+data+"'>"+value+"</a>";

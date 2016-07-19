@@ -7,10 +7,12 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
@@ -32,6 +34,7 @@
             <div class="supplierform">
                 <div class="supplierforminput">
                     <div class="row">
+                        <form id="purchaseOrderForm" method="post" class="form-horizontal">
                         <div class="col-md-12">
                             <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
@@ -45,18 +48,18 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' name="ordId" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               id="purchaseNumber"/>
+                                               id="ordId"/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         项目名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" fieldonly='1' tabindex="" name="proId" id="proId"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -67,13 +70,13 @@
                                         项目开始时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-execution1" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="beginDate" name="beginDate" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         合计
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                        <input type="text" fieldonly='1' tabindex="" name="proMoney" id="proMoney"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -84,16 +87,19 @@
                                         经理
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no11"
-                                               class=detailedViewTextBox
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                        <div  style="width: 70%;height: 30px; float: left;">
+                                            <select id="proBrokerage" name="proBrokerage" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                <optgroup id="projectManagerList" label="负责人" >
+
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         采购状态
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no112"
+                                        <input type="text" fieldonly='1' tabindex="" name="status" id="status"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -104,13 +110,13 @@
                                         预计到货时间
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-execution" type="text" onfocus="WdatePicker()" readonly/>
+                                        <input class="Wdate" id="expecteAT" name="expecteAT" type="text" onfocus="WdatePicker()" readonly/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         到货确认
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1121"
+                                        <input type="text" fieldonly='1' tabindex="" name="action" id="action"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -131,17 +137,18 @@
                                     </td>
                                     <td width="80%" align="left" class="DetailedTd2Info">
                                 <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
-                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
-                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="notes"
+                                          id="notes" onBlur="this.className='detailedViewTextBox'" cols="90"
                                           style="height:50px"></textarea>
                                     </td>
                                 </tr>
                             </table>
                             <div class="purchaseBtn">
-                                <button class="btn btn-success save">保存</button>
+                                <button class="btn btn-success save" type="button" onclick="savePurchaseOrder();">保存</button>
                                 <button class="btn btn-danger cancel">取消</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -151,43 +158,59 @@
     </div>
 </div>
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "supName": 0,
-                "contactPersonName": "Item 0",
-                "contact": "$0"
-            },
-            {
-                "supName": 1,
-                "contactPersonName": "Item 1",
-                "contact": "$1"
-            },
-            {
-                "supName": 2,
-                "contactPersonName": "Item 2",
-                "contact": "$2"
-            },
-            {
-                "supName": 3,
-                "contactPersonName": "Item 3",
-                "contact": "$3"
-            },
-            {
-                "supName": 4,
-                "contactPersonName": "Item 4",
-                "contact": "$4"
-            },
-            {
-                "supName": 5,
-                "contactPersonName": "Item 5",
-                "contact": "$5"
+    $(document).ready(function(){
+        //经理人下拉框
+        $.ajax({
+            url: "../../../HMITCRM//getProBrokeragList",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                for (var i = 0; i<data.length; i++){
+                    $('#projectManagerList').append("<option value=" + data[i].empId + ">" + data[i].empName + "</option>");
+                    $('.selectpicker').selectpicker('val', '');
+                    $('.selectpicker').selectpicker('refresh');
+                }
             }
-        ];
-        $table.bootstrapTable({data: data});
+        });
     });
+
+    var sy = $.extend({}, sy);
+    sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+        var o = {};
+        $.each(form.serializeArray(), function (index) {
+            if (o[this['name']]) {
+                o[this['name']] = o[this['name']] + "," + this['value'];
+            } else {
+                o[this['name']] = this['value'];
+            }
+        });
+        return o;
+    };
+    var url;
+    var type;
+    function savePurchaseOrder(){
+        var data1 = sy.serializeObject($('#purchaseOrderForm'));
+        data1.empName =$('#projectManagerList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addPurchaseOrder';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                var o =  eval("("+result+")");
+                if (o.result=="success"){
+                    alert(o.msg);
+                    location.href='purchase_detail_index.html?data='+data;
+                }
+                else {
+                    alert(o.msg);
+                }
+            },
+            error : function(){}
+        })
+    }
 
 
 </script>

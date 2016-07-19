@@ -23,7 +23,7 @@
         <div class="col-md-2">
             <div class="receiptmenu">
                 <div class="title">
-                    新增 付款单
+                    新增 付款计划
                 </div>
                 <div class="info">
                     相关信息
@@ -35,7 +35,7 @@
             <div class="receiptform">
                 <div class="receiptforminput">
                     <div class="row">
-                        <form id="paymentForm">
+                        <form id="paymentPlanForm">
                             <div class="col-md-12">
                                 <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
                                     <thead>
@@ -45,22 +45,22 @@
                                     </thead>
                                     <tr>
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            <i style="color: red">*</i>付款单编号
+                                            <i style="color: red">*</i>计划付款单编号
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
 
-                                            <input type="text" fieldonly='1' name="paymentId" tabindex="" value=""
+                                            <input type="text" fieldonly='1' name="paymentPlanId" tabindex="" value=""
                                                    tabindex="" class="detailedViewTextBox"
                                                    onfocus="this.className='detailedViewTextBoxOn'"
                                                    onBlur="this.className='detailedViewTextBox'"
-                                                   id="paymentId"/>
+                                                   id="paymentPlanId"/>
                                         </td>
 
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            付款方式
+                                            期次
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
-                                            <input type="text" fieldonly='1' tabindex="" name="payment" id="payment"
+                                            <input type="text" fieldonly='1' tabindex="" name="periodTime" id="periodTime"
                                                    class=detailedViewTextBox
                                                    onFocus="this.className='detailedViewTextBoxOn'"
                                                    onBlur="this.className='detailedViewTextBox'">
@@ -69,21 +69,23 @@
                                     </tr>
                                     <tr>
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            合计
+                                            状态
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
-                                            <input type="text" fieldonly='1' tabindex="" name="totalAmount" id="totalAmount"
+                                            <input type="text" fieldonly='1' tabindex="" name="status" id="status"
                                                    class=detailedViewTextBox
                                                    onFocus="this.className='detailedViewTextBoxOn'"
                                                    onBlur="this.className='detailedViewTextBox'">
                                         </td>
 
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            付款日期
+                                            金额
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
-                                            <input class="Wdate" id="paymentDate" name="paymentDate" type="text" onfocus="WdatePicker()"
-                                                   readonly/>
+                                            <input type="text" fieldonly='1' tabindex="" name="amount" id="amount"
+                                                   class=detailedViewTextBox
+                                                   onFocus="this.className='detailedViewTextBoxOn'"
+                                                   onBlur="this.className='detailedViewTextBox'">
                                         </td>
                                     </tr>
                                     <tr>
@@ -101,21 +103,19 @@
                                         </td>
 
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            采购订单
+                                            计划付款日期
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
-                                            <input type="text" fieldonly='1' tabindex="" name="ordId" id="ordId"
-                                                   class=detailedViewTextBox
-                                                   onFocus="this.className='detailedViewTextBoxOn'"
-                                                   onBlur="this.className='detailedViewTextBox'">
+                                            <input class="Wdate" id="paymentPlanDate" name="paymentPlanDate" type="text" onfocus="WdatePicker()"
+                                                   readonly/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="20%" class="DetailedTd1Label" align="right">
-                                            计划付款单
+                                            采购订单
                                         </td>
                                         <td width="30%" align="left" class="DetailedTd2Info">
-                                            <input type="text" fieldonly='1' tabindex="" name="paymentPlanId" id="paymentPlanId"
+                                            <input type="text" fieldonly='1' tabindex="" name="ordId" id="ordId"
                                                    class=detailedViewTextBox
                                                    onFocus="this.className='detailedViewTextBoxOn'"
                                                    onBlur="this.className='detailedViewTextBox'">
@@ -153,7 +153,7 @@
                                     </tr>
                                 </table>
                                 <div class="paymentBtn">
-                                    <button class="btn btn-success save" type="button" onclick="savePayment();">保存</button>
+                                    <button class="btn btn-success save" type="button" onclick="savePaymentPlan();">保存</button>
                                     <button class="btn btn-danger cancel">取消</button>
                                 </div>
                             </div>
@@ -165,20 +165,18 @@
     </div>
 </div>
 <script>
-
     var LocString = String(window.document.location.href);
     function getQueryStr(str) {
         var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
         if (tmp = rs) {
             return tmp[2];
         }
-// parameter cannot be found
+        // parameter cannot be found
         return "";
     }
     var formSupId = getQueryStr("supId");
     var formSupName = decodeURIComponent(getQueryStr("supName"));
     if(formSupId!=""){
-        document.getElementById("paymentPlanId").value = getQueryStr("paymentPlanId");
         document.getElementById("supId").removeAttribute("title");
         $('#supplierList').append("<option value=" + formSupId + ">" + formSupName + "</option>");
     }else{
@@ -211,11 +209,11 @@
     };
     var url;
     var type;
-    function savePayment(){
-        var data1 = sy.serializeObject($('#paymentForm'));
+    function savePaymentPlan(){
+        var data1 = sy.serializeObject($('#paymentPlanForm'));
         data1.supName =$('#supplierList option:selected').text();
         var data = encodeURI(JSON.stringify(data1),"UTF-8");
-        url = '../../../HMITCRM/addPayment';
+        url = '../../../HMITCRM/addPaymentPlan';
         $.ajax({
             url : url,
             data : 'data=' + data,
@@ -225,7 +223,7 @@
                 var o =  eval("("+result+")");
                 if (o.result=="success"){
                     alert(o.msg);
-                    location.href='payment_detail_index.html?data='+data;
+                    location.href='paymentplan_detail_index.html?data='+data;
                 }
                 else {
                     alert(o.msg);
@@ -234,6 +232,7 @@
             error : function(){}
         })
     }
+
 </script>
 </body>
 </html>

@@ -19,8 +19,15 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row,"UTF-8");
             var obj =JSON.parse(row);
-            $('#orderName').text(obj.name);
-            $('.title').text(obj.name);
+            $('#id').text(obj.id);
+            $('#cusId').text(obj.cusName);
+            $('#proId').text(obj.proName);
+            $('#contactPerson').text(obj.contactPerson);
+            $('#saleResp').text(obj.saleResp);
+            $('#agent').text(obj.agent);
+            $('#deliverDate').text(obj.deliverDate);
+            $('#status').text(obj.status);
+            $('.title').text(obj.proName);
         });
     });
 

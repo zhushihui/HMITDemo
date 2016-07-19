@@ -19,20 +19,25 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#contactPersonName').text(obj.name);
-            $('.title').text(obj.name);
+            $('#supName').text(obj.supName);
+            $('#contactPersonName').text(obj.contactPersonName);
+            $('#contact').text(obj.contact);
+            $('#address').text(obj.address);
+            $('#empId').text(obj.empName);
+            $('#totalPaymentAmount').text(obj.totalPaymentAmount);
+            $('.title').text(obj.supName);
         });
     });
     function purchaseinvoice() {
 
-        $('.supplierform').load('#');
+        $('.supplierform').load('purchase_invoice.html');
 
 
     }
 
     function paymentplan() {
 
-        $('.supplierform').load('#');
+        $('.supplierform').load('payment_plan.html');
     }
 </script>
 <div class="supplier">

@@ -24,19 +24,25 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
-                   data-show-export="true">
+                   data-url="../../../HMITCRM/getAllReceipt"
+                   data-show-export="true"
+                    >
 
                 <thead>
                 <tr>
                     <th data-field="receiptId" data-formatter="receiptnameformat">收款单编号</th>
-                    <th data-field="customerName">客户名称</th>
+                    <th data-field="cusName">客户名称</th>
                     <th data-field="payment">收款方式</th>
                     <th data-field="total">合计</th>
                     <th data-field="collectionDate">收款日期</th>
@@ -52,87 +58,6 @@
 </div>
 
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 1,
-                "customerName": "Item1",
-                "payment": "$1"
-            },
-            {
-                "receiptId": 2,
-                "customerName": "Item2",
-                "payment": "$2"
-            },
-            {
-                "receiptId": 3,
-                "customerName": "Item3",
-                "payment": "$3"
-            },
-            {
-                "receiptId": 4,
-                "customerName": "Item4",
-                "payment": "$4"
-            },
-            {
-                "receiptId": 5,
-                "customerName": "Item5",
-                "payment": "$5"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            },
-            {
-                "receiptId": 0,
-                "customerName": "Item0",
-                "payment": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
     function receiptnameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='receipt_detail_index.html?data="+data+"'>"+value+"</a>";

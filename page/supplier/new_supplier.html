@@ -7,10 +7,12 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
@@ -37,6 +39,7 @@
         <div class="col-md-10">
             <div class="supplierform">
                 <div class="supplierforminput">
+                    <form id="supplierForm" method="post" class="form-horizontal">
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
@@ -51,18 +54,17 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' id="supName" name="supName" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"
-                                               id="contactPersonName"/>
+                                               onBlur="this.className='detailedViewTextBox'"/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         主要联系人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" fieldonly='1' tabindex="" name="contactPersonName" id="contactPersonName"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -75,18 +77,18 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' name="contact" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               id="account_name_check"/>
+                                               id="contact"/>
                                     </td>
 
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         地址
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                        <input type="text" fieldonly='1' tabindex="" name="address" id="address"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -98,16 +100,22 @@
                                         业务代表
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no11"
-                                               class=detailedViewTextBox
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                        <div class="form-group">
+                                            <div class="col-md-4" style="width: 59%;height: 30px; float: left;">
+                                                <select id="empId" name="empId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                    <optgroup id="empList" label="业务员名称" >
+
+                                                    </optgroup>
+                                                </select>
+
+                                            </div>
+                                        </div>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         应付款
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no112"
+                                        <input type="text" fieldonly='1' tabindex="" name="totalPaymentAmount" id="totalPaymentAmount"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -128,60 +136,76 @@
                                     </td>
                                     <td width="80%" align="left" class="DetailedTd2Info">
                                 <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
-                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
-                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="notes"
+                                          id="notes" onBlur="this.className='detailedViewTextBox'" cols="90"
                                           style="height:50px"></textarea>
                                     </td>
                                 </tr>
                             </table>
                             <div class="supplierBtn">
-                                <button class="btn btn-success save">保存</button>
+                                <button class="btn btn-success save" type="button" onclick="saveSupplier();">保存</button>
                                 <button class="btn btn-danger cancel">取消</button>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script>
-    var $table = $('#table');
 
-    $(function () {
-        var data = [
-            {
-                "supName": 0,
-                "contactPersonName": "Item 0",
-                "contact": "$0"
-            },
-            {
-                "supName": 1,
-                "contactPersonName": "Item 1",
-                "contact": "$1"
-            },
-            {
-                "supName": 2,
-                "contactPersonName": "Item 2",
-                "contact": "$2"
-            },
-            {
-                "supName": 3,
-                "contactPersonName": "Item 3",
-                "contact": "$3"
-            },
-            {
-                "supName": 4,
-                "contactPersonName": "Item 4",
-                "contact": "$4"
-            },
-            {
-                "supName": 5,
-                "contactPersonName": "Item 5",
-                "contact": "$5"
+    var sy = $.extend({}, sy);
+    sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+        var o = {};
+        $.each(form.serializeArray(), function (index) {
+            if (o[this['name']]) {
+                o[this['name']] = o[this['name']] + "," + this['value'];
+            } else {
+                o[this['name']] = this['value'];
             }
-        ];
-        $table.bootstrapTable({data: data});
+        });
+        return o;
+    };
+    var url;
+    var type;
+    function saveSupplier(){
+        var data1 = sy.serializeObject($('#supplierForm'));
+        data1.empName =$('#empList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addSupplier';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                if (result){
+                    alert("添加成功");
+                    location.href='supplier_detail_index.html?data='+data;
+                }
+                else {
+                    alert("添加失败");
+                }
+            },
+            error : function(){}
+        })
+    }
+
+
+    //业务代表下拉框
+    $.ajax({
+        url: "../../../HMITCRM//getProBrokeragList",
+        dataType: "json",
+        success: function (data) {
+            JSON.stringify(data);
+            for (var i = 0; i<data.length; i++){
+                $('#empList').append("<option value=" + data[i].empId + ">" + data[i].empName + "</option>");
+                $('.selectpicker').selectpicker('val', '');
+                $('.selectpicker').selectpicker('refresh');
+            }
+        }
     });
 
 

@@ -19,8 +19,14 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#receiptId').text(obj.name);
-            $('.title').text(obj.name);
+            $('#receiptId').text(obj.receiptId);
+            $('#cusId').text(obj.cusName);
+            $('#payment').text(obj.payment);
+            $('#total').text(obj.total);
+            $('#collectionDate').text(obj.collectionDate);
+            $('#leader').text(obj.leader);
+            $('#auditStatus').text(obj.auditStatus);
+            $('.title').text(obj.receiptId);
         });
     });
 </script>

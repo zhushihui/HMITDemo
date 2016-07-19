@@ -34,27 +34,36 @@
     <table id="table">
         <thead>
         <tr>
-            <th data-field="projectName">设备名称</th>
-            <th data-field="proName">品牌型号</th>
-            <th data-field="pTName">数量</th>
-            <th data-field="proMoney">销售单价</th>
-            <th data-field="proBrokerage">销售总价</th>
-            <th data-field="cusId">配置描述</th>
-            <th data-field="cz">批发</th>
-            <th data-field="projectManager">操作</th>
+            <th data-field="equName">设备名称</th>
+            <th data-field="equDescription">品牌型号</th>
+            <th data-field="equNumber">数量</th>
+            <th data-field="sellPrice">销售单价</th>
+            <th data-field="sellTotalPrice">销售总价</th>
+            <th data-field="remarks">配置描述</th>
+            <th data-field="ifWholeSale">批发</th>
         </thead>
     </table>
 </div>
 <script>
     var $table = $('#table');
-
     $(function () {
-        var data = [
-        ];
-        $table.bootstrapTable({data: data});
         var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
         row = decodeURI(row,"UTF-8");
         var obj =JSON.parse(row);
+        url = '../../../HMITCRM/getPurchaseOrderByProId';
+        $.ajax({
+            url : url,
+            data : "data=" + obj.proId,
+            datatype :'json',
+            type : 'post',
+            success : function(data){
+                var obj = eval(data);
+                $(function () {
+                    $table.bootstrapTable({data: obj});
+                });
+            },
+            error : function(){}
+        });
         url = '../project/new_project_schedule.html?proName=' + obj.name;
     });
 

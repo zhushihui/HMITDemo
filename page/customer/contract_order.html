@@ -37,29 +37,50 @@
                                 <table id="table">
                                     <thead>
                                     <tr>
-                                        <th data-field="proId">编号</th>
-                                        <th data-field="proName">订单名称</th>
-                                        <th data-field="pTName">签约日期</th>
-                                        <th data-field="proMoney">销售负责人</th>
-                                        <th data-field="proBrokerage">审批状态</th>
-                                        <th data-field="cusId">产品名称</th>
-                                        <th data-field="csId">未出库数量</th>
-                                        <th data-field="cz">操作</th>
+                                        <th data-field="contId">合同编号</th>
+                                        <th data-field="proName">项目名称</th>
+                                        <th data-field="signDate">签约日期</th>
+                                        <th data-field="saleResp">销售负责人</th>
+                                        <th data-field="status">审批状态</th>
+                                        <th data-field="productName">产品名称</th>
+                                        <th data-field="unOutStoreNum">未出库数量</th>
+                                        <th data-field="cz" data-formatter="actionFormat">操作</th>
                                     </tr>
                                     </thead>
                                 </table>
                             </div>
 <script>
-    var $table = $('#table');
 
+    function actionFormat(value, row, index) {
+        return '<a onclick="auditContract('+row.contId+')">审核</a>' +'&nbsp&nbsp'+
+                '<a onclick="deleteContract('+row.contId+')">删除</a>';
+    }
+    function auditContract(){
+        alert(1);
+    }
+    function deleteContract(){
+        alert(2);
+    }
+    var $table = $('#table');
     $(function () {
-        var data = [
-        ];
-        $table.bootstrapTable({data: data});
         var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
         row = decodeURI(row,"UTF-8");
         var obj =JSON.parse(row);
-        url = '../contactorder/new_contactorder.html?orderName=' + obj.name;
+        url = '../../../HMITCRM/getContractListByCusId';
+        $.ajax({
+            url : url,
+            data : "data=" + obj.cusId,
+            datatype :'json',
+            type : 'post',
+            success : function(data){
+                var obj = eval(data);
+                $(function () {
+                    $table.bootstrapTable({data: obj});
+                });
+            },
+            error : function(){}
+        });
+        url = '../contactorder/new_contactorder.html?cusName=' + encodeURIComponent(obj.cusName) + '&cusId='+obj.cusId;
     });
 
     function newContact(){

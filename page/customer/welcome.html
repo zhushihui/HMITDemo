@@ -13,6 +13,7 @@
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/global.js"></script>
+<script src="../../js/ga.js"></script>
 
 <body>
 <div style="width: 100%; margin-top: 50px;">
@@ -42,8 +43,7 @@
                    data-search-text="all"
                    data-toolbar="#toolbar"
                    data-url="../../../HMITCRM/getAllCustomer"
-                   data-show-export="true"
-                    >
+                   data-show-export="true">
 
                 <thead>
                 <tr>
@@ -53,6 +53,7 @@
                     <th data-field="address">地点</th>
                     <th data-field="contact">联系方式</th>
                     <th data-field="empName">负责人</th>
+                    <th data-field="cz" data-formatter="actionFormat">操作</th>
                 </tr>
                 </thead>
             </table>
@@ -61,7 +62,6 @@
     </div>
 
 </div>
-
 <script>
 
     function responseHandler(res) {
@@ -72,9 +72,36 @@
         }
     }
 
+
     function customernameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='customer_detail_index.html?data="+data+"'>"+value+"</a>";
+    }
+    function actionFormat(value, row, index) {
+        return '<a onclick="editCustomer('+row.cusId+')">修改</a>' +'&nbsp&nbsp'+
+                '<a onclick="deleteCustomer('+row.cusId+')">删除</a>';
+    }
+    function editCustomer(cusId){
+            alert(cusId);
+    }
+    var $table = $('#table');
+    function deleteCustomer(cusId){
+        if (cusId) {
+            url = '../../../HMITCRM/deleteCustomer?cusId=' + cusId;
+            $.ajax({
+                url : url,
+                dataType : 'json',
+                type : 'post',
+                success : function(result){
+                    if (result.result=="success"){
+                        alert(result.msg);
+                        $table.bootstrapTable('refresh');
+                    } else {
+                        alert(result.msg)
+                    }
+                }
+            });
+        }
     }
 
 </script>

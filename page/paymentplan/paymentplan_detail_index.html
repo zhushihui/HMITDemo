@@ -19,14 +19,22 @@
             var row = window.location.href.slice(window.location.href.indexOf('=') + 1);
             row = decodeURI(row, "UTF-8");
             var obj = JSON.parse(row);
-            $('#paymentplanId').text(obj.name);
-            $('.title').text(obj.name);
+            $('#paymentPlanId').text(obj.paymentPlanId);
+            $('#payment').text(obj.payment);
+            $('#periodTime').text(obj.periodTime);
+            $('#status').text(obj.status);
+            $('#amount').text(obj.amount);
+            $('#supId').text(obj.supName);
+            $('#ordId').text(obj.ordId);
+            $('#paymentPlanDate').text(obj.paymentPlanDate);
+            $('#leader').text(obj.leader);
+            $('.title').text(obj.paymentPlanId);
         });
     });
-
     function paymentorder() {
-
+        $('.paymentplanform').load('pay_ment.html');
     }
+
 </script>
 <div class="paymentplan">
     <div class="row">

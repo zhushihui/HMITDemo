@@ -24,13 +24,18 @@
         <div class="col-md-12">
             <p></p>
             <table id="table"
-                   data-pagination="true"
+                   data-toggle="table"
                    data-search="true"
-                   data-page-size="10"
+                   data-page-list="[10,20,30,40,50]"
                    data-show-refresh="true"
                    data-show-columns="true"
+                   data-height="600"
                    data-width="100%"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   data-search-text="all"
                    data-toolbar="#toolbar"
+                   data-url="../../../HMITCRM/getAllPurchaseInvoice"
                    data-show-export="true">
 
                 <thead>
@@ -38,8 +43,10 @@
                     <th data-field="invoiceId" data-formatter="purchase_invoicenameformat">发票编号</th>
                     <th data-field="total">合计</th>
                     <th data-field="invoiceDate">开票日期</th>
-                    <th data-field="supplier">供应商</th>
+                    <th data-field="supName">供应商</th>
+                    <th data-field="ordId">采购订单</th>
                     <th data-field="createDate">创建日期</th>
+                    <th data-field="notes">备注</th>
                 </tr>
                 </thead>
             </table>
@@ -50,87 +57,6 @@
 </div>
 
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 1,
-                "total": "Item1",
-                "invoiceDate": "$1"
-            },
-            {
-                "invoiceId": 2,
-                "total": "Item2",
-                "invoiceDate": "$2"
-            },
-            {
-                "invoiceId": 3,
-                "total": "Item3",
-                "invoiceDate": "$3"
-            },
-            {
-                "invoiceId": 4,
-                "total": "Item4",
-                "invoiceDate": "$4"
-            },
-            {
-                "invoiceId": 5,
-                "total": "Item5",
-                "invoiceDate": "$5"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 0,
-                "total": "Item0",
-                "invoiceDate": "$0"
-            }
-        ];
-        $table.bootstrapTable({data: data});
-    });
     function purchase_invoicenameformat(value, row, index) {
         var data = encodeURI(JSON.stringify(row),"UTF-8");
         return "<a href='purchase_invoice_detail_index.html?data="+data+"'>"+value+"</a>";

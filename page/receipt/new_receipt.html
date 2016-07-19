@@ -6,10 +6,13 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
+<script src="../../js/jquery/jquery-form.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
@@ -30,6 +33,7 @@
             <div class="receiptform">
                 <div class="receiptforminput">
                     <div class="row">
+                        <form id="receiptForm">
                         <div class="col-md-12">
                             <table class="table" border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
@@ -43,7 +47,7 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' id="receiptId" name="receiptId" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
@@ -53,11 +57,13 @@
                                         客户名称
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input id="customerName" type="text" fieldonly='1' tabindex="" name="account_no"
-                                               class="detailedViewTextBox"
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'"
-                                               style="width:70%;float:left;"/>
+                                        <div  style="width: 70%;height: 30px; float: left;">
+                                            <select id="cusId" name="cusId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                                <optgroup id="customerList" label="客户" >
+
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -66,17 +72,17 @@
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' name="total" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               style="width:70%;float:left;" id="account_name_check"/>
+                                               style="width:70%;float:left;" id="total"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         收款方式
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no14"
+                                        <input type="text" fieldonly='1' tabindex="" name="payment" id="payment"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
@@ -88,7 +94,7 @@
                                         负责人
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
+                                        <input type="text" fieldonly='1' tabindex="" name="leader" id="leader"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
@@ -98,7 +104,7 @@
                                         收款日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-sign" type="text" onfocus="WdatePicker()"
+                                        <input class="Wdate" id="collectionDate" name="collectionDate" type="text" onfocus="WdatePicker()"
                                                readonly/>
                                     </td>
                                 </tr>
@@ -107,7 +113,7 @@
                                         审核状态
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no133"
+                                        <input type="text" fieldonly='1' tabindex="" name="auditStatus" id="auditStatus"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
@@ -128,17 +134,18 @@
                                     </td>
                                     <td width="80%" align="left" class="DetailedTd2Info">
                                 <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
-                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
-                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="notes"
+                                          id="notes" onBlur="this.className='detailedViewTextBox'" cols="90"
                                           style="height:50px"></textarea>
                                     </td>
                                 </tr>
                             </table>
                             <div class="receiptBtn">
-                                <button class="btn btn-success save">保存</button>
+                                <button class="btn btn-success save" type="button" onclick="saveReceipt();">保存</button>
                                 <button class="btn btn-danger cancel">取消</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -146,13 +153,6 @@
     </div>
 </div>
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [];
-        $table.bootstrapTable({data: data});
-    });
-
     var LocString = String(window.document.location.href);
     function getQueryStr(str) {
         var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
@@ -162,7 +162,65 @@
 // parameter cannot be found
         return "";
     }
-    document.getElementById("customerName").value = getQueryStr("customerName");
+    var formCusId = getQueryStr("cusId");
+    var formCusName = decodeURIComponent(getQueryStr("cusName"));
+    if(formCusId!=""){
+        document.getElementById("cusId").removeAttribute("title");
+        $('#customerList').append("<option value=" + formCusId + ">" + formCusName + "</option>");
+    }else{
+        //客户下拉框
+        $.ajax({
+            url: "../../../HMITCRM/getCustomerList",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                for (var i = 0; i<data.length; i++){
+                    $('#customerList').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
+                    $('.selectpicker').selectpicker('val', '');
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            }
+        });
+    }
+
+    var sy = $.extend({}, sy);
+    sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+        var o = {};
+        $.each(form.serializeArray(), function (index) {
+            if (o[this['name']]) {
+                o[this['name']] = o[this['name']] + "," + this['value'];
+            } else {
+                o[this['name']] = this['value'];
+            }
+        });
+        return o;
+    };
+    var url;
+    var type;
+    function saveReceipt(){
+        var data1 = sy.serializeObject($('#receiptForm'));
+        data1.cusName =$('#customerList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addReceipt';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                var o =  eval("("+result+")");
+                if (o.result=="success"){
+                    alert(o.msg);
+                    location.href='receipt_detail_index.html?data='+data;
+                }
+                else {
+                    alert(o.msg);
+                }
+            },
+            error : function(){}
+        })
+    }
+
 </script>
 </body>
 </html>

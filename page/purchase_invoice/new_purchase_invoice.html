@@ -7,10 +7,12 @@
 </head>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/bootstrap-table.css">
+<link rel="stylesheet" href="../../css/bootstrap-select.min.css">
 <style type="text/css">@import "../../css/global.css";</style>
 <script src="../../js/jquery/jquery-1.12.3.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/bootstrap-table.js"></script>
+<script src="../../js/bootstrap-js/bootstrap-select.min.js"></script>
 <script src="../../js/export/bootstrap-table-export.js"></script>
 <script src="../../js/export/tableExport.js"></script>
 <script src="../../js/My97DatePicker/WdatePicker.js"></script>
@@ -39,6 +41,7 @@
             <div class="purchase_invoiceform">
                 <div class="purchase_invoiceforminput">
                     <div class="row">
+                        <form id="purchaseInvoiceForm" method="post" class="form-horizontal">
                         <div class="col-md-12">
                             <table class="table " border=1 cellspacing="0" cellpadding=0 width=100%>
                                 <thead>
@@ -52,17 +55,17 @@
                                     </td>
                                     <td id="" width="30%" align="left" class="DetailedTd2Info">
 
-                                        <input type="text" fieldonly='1' name="accountname" tabindex="" value=""
+                                        <input type="text" fieldonly='1' name="invoiceId" tabindex="" value=""
                                                tabindex="" class="detailedViewTextBox"
                                                onfocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'"
-                                               id="total"/>
+                                               id="invoiceId"/>
                                     </td>
                                     <td width="20%" class="DetailedTd1Label" align="right">
                                         合计
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no"
+                                        <input type="text" fieldonly='1' tabindex="" name="total" id="total"
                                                class=detailedViewTextBox
                                                onFocus="this.className='detailedViewTextBoxOn'"
                                                onBlur="this.className='detailedViewTextBox'">
@@ -71,10 +74,10 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
-                                        开票日期
+                                        采购订单
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-execution1" type="text" onfocus="WdatePicker()"
+                                        <input class="Wdate" id="ordId" name="ordId" type="text" onfocus="WdatePicker()"
                                                readonly/>
                                     </td>
 
@@ -82,18 +85,27 @@
                                         供应商
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input type="text" fieldonly='1' tabindex="" name="account_no" id="account_no1"
-                                               class=detailedViewTextBox
-                                               onFocus="this.className='detailedViewTextBoxOn'"
-                                               onBlur="this.className='detailedViewTextBox'">
+                                        <select id="supId" name="supId" class="selectpicker show-tick form-control" data-live-search="true" title="请选择">
+                                            <optgroup id="supplierList" label="供应商" >
+
+                                            </optgroup>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="20%" class="DetailedTd1Label" align="right">
+                                        开票日期
+                                    </td>
+                                    <td width="30%" align="left" class="DetailedTd2Info">
+                                        <input class="Wdate" id="invoiceDate" name="invoiceDate" type="text" onfocus="WdatePicker()"
+                                               readonly/>
+                                    </td>
+
+                                    <td width="20%" class="DetailedTd1Label" align="right">
                                         创建日期
                                     </td>
                                     <td width="30%" align="left" class="DetailedTd2Info">
-                                        <input class="Wdate" id="date-execution12" type="text" onfocus="WdatePicker()"
+                                        <input class="Wdate" id="createDate" name="createDate" type="text" onfocus="WdatePicker()"
                                                readonly/>
                                     </td>
                                 </tr>
@@ -112,17 +124,18 @@
                                     </td>
                                     <td width="80%" align="left" class="DetailedTd2Info">
                                 <textarea class="detailedViewTextBox" tabindex="" fieldonly='0'
-                                          onFocus="this.className='detailedViewTextBoxOn'" name="description"
-                                          id="description" onBlur="this.className='detailedViewTextBox'" cols="90"
+                                          onFocus="this.className='detailedViewTextBoxOn'" name="notes"
+                                          id="notes" onBlur="this.className='detailedViewTextBox'" cols="90"
                                           style="height:50px"></textarea>
                                     </td>
                                 </tr>
                             </table>
                             <div class="purchase_invoiceBtn">
-                                <button class="btn btn-success save">保存</button>
+                                <button class="btn btn-success save" type="button" onclick="savePurchaseInvoice();">保存</button>
                                 <button class="btn btn-danger cancel">取消</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -132,44 +145,72 @@
     </div>
 </div>
 <script>
-    var $table = $('#table');
-
-    $(function () {
-        var data = [
-            {
-                "invoiceId": 0,
-                "total": "Item 0",
-                "invoiceDate": "$0"
-            },
-            {
-                "invoiceId": 1,
-                "total": "Item 1",
-                "invoiceDate": "$1"
-            },
-            {
-                "invoiceId": 2,
-                "total": "Item 2",
-                "invoiceDate": "$2"
-            },
-            {
-                "invoiceId": 3,
-                "total": "Item 3",
-                "invoiceDate": "$3"
-            },
-            {
-                "invoiceId": 4,
-                "total": "Item 4",
-                "invoiceDate": "$4"
-            },
-            {
-                "invoiceId": 5,
-                "total": "Item 5",
-                "invoiceDate": "$5"
+    var LocString = String(window.document.location.href);
+    function getQueryStr(str) {
+        var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) {
+            return tmp[2];
+        }
+        // parameter cannot be found
+        return "";
+    }
+    var formSupId = getQueryStr("supId");
+    var formSupName = decodeURIComponent(getQueryStr("supName"));
+    if(formSupId!=""){
+        document.getElementById("supId").removeAttribute("title");
+        $('#supplierList').append("<option value=" + formSupId + ">" + formSupName + "</option>");
+    }else{
+        //供应商下拉框
+        $.ajax({
+            url: "../../../HMITCRM//getSupplierList",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                for (var i = 0; i<data.length; i++){
+                    $('#supplierList').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
+                    $('.selectpicker').selectpicker('val', '');
+                    $('.selectpicker').selectpicker('refresh');
+                }
             }
-        ];
-        $table.bootstrapTable({data: data});
-    });
-
+        });
+    }
+    var sy = $.extend({}, sy);
+    sy.serializeObject = function (form) { /*将form表单内的元素序列化为对象，扩展Jquery的一个方法*/
+        var o = {};
+        $.each(form.serializeArray(), function (index) {
+            if (o[this['name']]) {
+                o[this['name']] = o[this['name']] + "," + this['value'];
+            } else {
+                o[this['name']] = this['value'];
+            }
+        });
+        return o;
+    };
+    var url;
+    var type;
+    function savePurchaseInvoice(){
+        var data1 = sy.serializeObject($('#purchaseInvoiceForm'));
+        data1.supName =$('#supplierList option:selected').text();
+        var data = encodeURI(JSON.stringify(data1),"UTF-8");
+        url = '../../../HMITCRM/addPurchaseInvoice';
+        $.ajax({
+            url : url,
+            data : 'data=' + data,
+            datatype :'json',
+            type : 'post',
+            success : function(result){
+                var o =  eval("("+result+")");
+                if (o.result=="success"){
+                    alert(o.msg);
+                    location.href='purchase_invoice_detail_index.html?data='+data;
+                }
+                else {
+                    alert(o.msg);
+                }
+            },
+            error : function(){}
+        })
+    }
 
 </script>
 </body>
